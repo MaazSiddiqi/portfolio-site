@@ -5,10 +5,10 @@ export default function Navbar({ mainText, menuItems, special, shrinkAt = 'sm' }
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   return (
-    <nav className="flex bg-gradient-to-b from-violet-300/50 py-6 text-center text-gray-600 fixed w-full">
+    <nav className="flex bg-gradient-to-b from-gray-200/75 py-6 text-center text-gray-600 fixed w-full z-50">
       <div className="flex justify-between w-full mx-10 md:mx-24 xl:mx-40">
         {/* Nav Main */}
-        <a href="#" className="text-2xl font-mono ">
+        <a href="#" className="text-2xl font-mono border-b-2 border-indigo-600">
           {mainText ? mainText : "Nav Main."}
         </a>
 
@@ -57,7 +57,7 @@ export default function Navbar({ mainText, menuItems, special, shrinkAt = 'sm' }
         <div
           className={`${
             showSideMenu ? "" : "hidden"
-          } ${shrinkAt}:hidden bg-gradient-to-l from-white fixed right-0 top-0 h-full w-5/12 font-light`}
+          } ${shrinkAt}:hidden bg-gradient-to-l from-white fixed right-0 top-0 h-full w-full font-light`}
         >
           <ul className="w-full text-right">
             <button
