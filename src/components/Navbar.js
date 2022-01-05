@@ -5,7 +5,7 @@ export default function Navbar({ mainText, menuItems, special, shrinkAt = 'sm' }
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   return (
-    <nav className="flex bg-gradient-to-b from-gray-200/75 py-6 text-center text-gray-600 fixed w-full z-50">
+    <nav className="fixed flex bg-gradient-to-b from-white py-6 text-center text-gray-600  w-full z-50">
       <div className="flex justify-between w-full mx-10 md:mx-24 xl:mx-40">
         {/* Nav Main */}
         <a href="#" className=" p-1 text-2xl font-mono border-b-2 border-indigo-600 hover:scale-105 hover:shadow-lg hover:rounded-xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200">
@@ -58,7 +58,7 @@ export default function Navbar({ mainText, menuItems, special, shrinkAt = 'sm' }
         <div
           className={`${
             showSideMenu ? "" : "hidden"
-          } ${shrinkAt}:hidden bg-gradient-to-l from-white absolute top-0 right-0 h-full w-full font-light`}
+          } ${shrinkAt}:hidden bg-gradient-to-l from-white fixed top-0 right-0 h-full w-full font-light`}
         >
           <ul className="w-full text-right">
             <button
@@ -69,10 +69,10 @@ export default function Navbar({ mainText, menuItems, special, shrinkAt = 'sm' }
               <li className="pt-8 pb-2 px-6 group w-full hover:cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 group-hover:scale-125 group-hover:rotate-180 transition-all duration-200"
+                  className="h-6 w-6 stroke-indigo-600 group-hover:scale-125 group-hover:rotate-180 transition-all duration-200"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="indigi"
                 >
                   <path
                     strokeLinecap="round"
