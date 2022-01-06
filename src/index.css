@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .basic-focus-animation {
+        @apply hover:scale-105 hover:shadow-lg hover:rounded-xl transition-all duration-200
+    }
+}
