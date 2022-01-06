@@ -5,7 +5,7 @@ export default function Navbar({ mainText, menuItems, special }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   return (
-    <nav className="fixed flex bg-gradient-to-b from-white/[97] via-white/95 py-6 hover:bg-white transition-all duration-200 text-center text-gray-600  w-full z-50">
+    <nav className="fixed flex bg-gradient-to-b from-white/[97] via-white/95 py-6 hover:bg-white transition-all duration-200 text-center text-gray-500  w-full z-50">
       <div className="flex justify-between w-full mx-10 md:mx-24 xl:mx-40">
         {/* Nav Main */}
         <a href="#" className=" px-2 py-1 text-2xl font-mono border-b-2 border-indigo-600 hover:scale-105 hover:shadow-lg hover:rounded-xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200">

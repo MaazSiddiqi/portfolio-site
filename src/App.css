@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        overflow: overlay;
+    }
+
+    .basic-focus-animation {
+        @apply hover:scale-105 hover:shadow-lg hover:rounded-xl transition-all duration-200
+    }
+    .hero-image {
+        @apply h-full min-w-max absolute top-0 -right-[95%] sm:-right-[50%] md:-right-[30%] lg:-right-[10%] -z-[1]
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-1 md:w-[0.35rem] bg-transparent
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply w-1 bg-gradient-to-b from-violet-400 to-fuchsia-400 rounded-3xl
+    }
+}
+
+
