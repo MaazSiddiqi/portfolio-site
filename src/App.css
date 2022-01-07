@@ -16,7 +16,7 @@
     }
 
     ::-webkit-scrollbar {
-        @apply w-1 md:w-[0.4rem] bg-transparent hover:bg-black
+        @apply w-1 md:w-[0.4rem] bg-transparent
     }
 
     ::-webkit-scrollbar-track {
