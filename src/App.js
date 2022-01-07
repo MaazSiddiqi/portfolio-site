@@ -1,5 +1,8 @@
 import Navbar from "./components/Navbar";
 import MainHero from "./components/MainHero";
+import Section from "./components/Section";
+import sampleImg from "./images/sample.svg";
+import divider from "./images/divider.svg";
 
 function App() {
   return (
@@ -32,19 +35,50 @@ function App() {
               </span>{" "}
               student at{" "}
               <span className="text-xl border-b-2 border-b-fuchsia-500/70 p-1 basic-focus-animation whitespace-nowrap">
-                Western University
+                Western University.
               </span>
-              .
             </h2>
           </div>
           <div className="rounded-full bg-white border-4 aspect-square h-[350px] w-[350px] m-3"></div>
         </div>
       </MainHero>
 
-      <section className="h-20">
+      <Section img={sampleImg} title="Main Text" layout={1} bg="bg-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo error
+        accusantium tempore, voluptatem officiis eos.
+      </Section>
 
+      <section className="relative flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-14 min-h-[25rem] bg-white p-14 z-[1]">
+        <img
+          src={sampleImg}
+          alt=""
+          className="aspect-video max-h-[12rem] lg:max-h-[18rem]"
+        />
+        <div className="max-w-lg">
+          <h1 className="pb-2 font-semibold text-3xl">Main Title</h1>
+          <p className="pt-2 text-lg text-gray-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur error vitae et neque ut dolores quos pariatur animi
+            suscipit nobis.
+          </p>
+        </div>
       </section>
 
+      <section className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-14 min-h-[25rem] bg-gradient-to-br from-indigo-600 via-purple-600 to-fuchsia-500 p-14 z-[0]">
+        <img
+          src={sampleImg}
+          alt=""
+          className="aspect-video max-h-[12rem] lg:max-h-[18rem]"
+        />
+        <div className="max-w-lg text-white">
+          <h1 className="pb-2 font-semibold text-3xl">Main Title</h1>
+          <p className="pt-2 text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consequuntur error vitae et neque ut dolores quos pariatur animi
+            suscipit nobis.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

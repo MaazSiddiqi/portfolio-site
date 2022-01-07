@@ -1,19 +1,19 @@
 import { useState } from "react";
 import Btn from "./Btn";
 
-export default function Navbar({ mainText, menuItems, special }) {
+export default function Navbar({ mainText, menuItems, special, shrinkAt = 'sm' }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
 
   return (
-    <nav className="fixed flex bg-gradient-to-b from-white/[97] via-white/95 py-6 hover:bg-white transition-all duration-200 text-center text-gray-500  w-full z-50">
+    <nav className="fixed flex bg-gradient-to-b from-white py-6 text-center text-gray-600  w-full z-50">
       <div className="flex justify-between w-full mx-10 md:mx-24 xl:mx-40">
         {/* Nav Main */}
-        <a href="#" className=" px-2 py-1 text-2xl font-mono border-b-2 border-indigo-600 hover:scale-105 hover:shadow-lg hover:rounded-xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200">
+        <a href="#" className=" p-1 text-2xl font-mono border-b-2 border-indigo-600 hover:scale-105 hover:shadow-lg hover:rounded-xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200">
           {mainText ? mainText : "Nav Main."}
         </a>
 
         {/* Nav Full Menu*/}
-        <span className='hidden md:flex space-x-4 font-light items-center'>
+        <span className={`hidden ${shrinkAt}:flex space-x-4 font-light items-center`}>
           {Object.keys(menuItems).map((item) =>
             special.find((_item) => _item === item) ? (
               <Btn text={item} key={Math.random(1000000, 100000000)} />
@@ -34,9 +34,9 @@ export default function Navbar({ mainText, menuItems, special }) {
           onClick={(e) => {
             setShowSideMenu(!showSideMenu);
           }}
-          className={`md:hidden ${
+          className={`${shrinkAt}:hidden ${
             showSideMenu ? "hidden" : ""
-          } rounded-xl bg-indigo-600 text-white hover:scale-105 hover:shadow-md hover:shadow-violet-600/50 hover:bg-white hover:text-gray-600 transition-all duration-150 p-1 active:shadow-inner active:bg-violet-50 active:scale-95 `}
+          } rounded-xl bg-indigo-600 text-white hover:scale-105 hover:shadow-md hover:shadow-violet-600/50 hover:bg-white hover:text-gray-600 transition-all duration-150 p-1 active:shadow-inner active:scale-95 `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export default function Navbar({ mainText, menuItems, special }) {
         <div
           className={`${
             showSideMenu ? "" : "hidden"
-          } md:hidden bg-gradient-to-l from-white fixed top-0 right-0 h-full w-full font-light`}
+          } ${shrinkAt}:hidden bg-gradient-to-l from-white fixed top-0 right-0 h-full w-full font-light`}
         >
           <ul className="w-full text-right">
             <button

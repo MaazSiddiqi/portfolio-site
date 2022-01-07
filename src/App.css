@@ -4,6 +4,7 @@
 
 @layer base {
     body {
+        background: #FFFFFF;
         overflow: overlay;
     }
 
@@ -15,7 +16,7 @@
     }
 
     ::-webkit-scrollbar {
-        @apply w-1 md:w-[0.35rem] bg-transparent
+        @apply w-1 md:w-[0.4rem] bg-transparent hover:bg-black
     }
 
     ::-webkit-scrollbar-track {
@@ -23,7 +24,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        @apply w-1 bg-gradient-to-b from-violet-400 to-fuchsia-400 rounded-3xl
+        @apply bg-gradient-to-b from-violet-400 to-fuchsia-400 rounded-3xl
     }
 }
 
