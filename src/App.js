@@ -2,7 +2,8 @@ import Navbar from "./components/Navbar";
 import MainHero from "./components/MainHero";
 import Section from "./components/Section";
 import sampleImg from "./images/sample.svg";
-import divider from "./images/divider.svg";
+import FullSection from './components/FullSection';
+
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
         </div>
       </MainHero>
 
-      <Section img={sampleImg} title="Main Text" layout={1} bg="bg-white">
+      <Section img={sampleImg} title="Main Text" layout={2} bg="bg-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo error
         accusantium tempore, voluptatem officiis eos.
       </Section>
@@ -79,6 +80,11 @@ function App() {
           </p>
         </div>
       </section>
+
+      <FullSection>
+        <h1>hi</h1>
+      </FullSection>
+
     </>
   );
 }
