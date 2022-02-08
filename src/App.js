@@ -2,8 +2,7 @@ import Navbar from "./components/Navbar";
 import MainHero from "./components/MainHero";
 import Section from "./components/Section";
 import sampleImg from "./images/sample.svg";
-import FullSection from './components/FullSection';
-
+import FullSection from "./components/FullSection";
 
 function App() {
   return (
@@ -44,9 +43,14 @@ function App() {
         </div>
       </MainHero>
 
-      <Section img={sampleImg} title="Main Text" layout={2} bg="bg-white">
+      <Section layout={1}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo error
         accusantium tempore, voluptatem officiis eos.
+      </Section>
+
+      <Section layout={1}>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, rerum
+        autem voluptate suscipit reprehenderit commodi.
       </Section>
 
       <section className="relative flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-14 min-h-[25rem] bg-white p-14 z-[1]">
@@ -84,7 +88,6 @@ function App() {
       <FullSection>
         <h1>hi</h1>
       </FullSection>
-
     </>
   );
 }

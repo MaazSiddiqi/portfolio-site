@@ -3,6 +3,15 @@
        "javascript": "javascriptreact"
    },
    "tailwindCSS.emmetCompletions": true,
+   "editor.formatOnSave": true,
+   "editor.smoothScrolling": true,
+   "editor.autoClosingDelete": "auto",
+   "editor.cursorSmoothCaretAnimation": true,
+   "editor.cursorBlinking": "smooth",
+   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
    "editor.quickSuggestions": {
     "strings": true
   }
