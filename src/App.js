@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
 import MainHero from "./components/MainHero";
-import Section from "./components/Section";
 import sampleImg from "./images/sample.svg";
 import FullSection from "./components/FullSection";
 
@@ -43,16 +42,6 @@ function App() {
         </div>
       </MainHero>
 
-      <Section layout={1}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo error
-        accusantium tempore, voluptatem officiis eos.
-      </Section>
-
-      <Section layout={1}>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, rerum
-        autem voluptate suscipit reprehenderit commodi.
-      </Section>
-
       <section className="relative flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-14 min-h-[25rem] bg-white p-14 z-[1]">
         <img
           src={sampleImg}
@@ -75,7 +64,7 @@ function App() {
           alt=""
           className="aspect-video max-h-[12rem] lg:max-h-[18rem]"
         />
-        <div className="max-w-lg text-white">
+        <div className="max-w-lg text-slate-50">
           <h1 className="pb-2 font-semibold text-3xl">Main Title</h1>
           <p className="pt-2 text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
