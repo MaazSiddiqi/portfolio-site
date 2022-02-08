@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar
         mainText="Maaz Siddiqi."
-        menuItems={{ Home: "#", About: "#", Contact: "#", Projects: "#" }}
+        menuItems={{ Home: "#", About: "#about", Contact: "#", Projects: "#" }}
         special={["Projects"]}
       />
 
@@ -42,30 +42,42 @@ function App() {
         </div>
       </MainHero>
 
+      {/* About Me */}
+      <section
+        id="about"
+        className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-14 min-h-[25rem] bg-gradient-to-br from-indigo-600 via-purple-600 to-fuchsia-500 p-14 z-[0]"
+      >
+        <div className="max-w-5xl space-y-8 text-slate-50">
+          <h1 className=" font-bold text-3xl text-slate-100">About Me.</h1>
+          <div className="text-lg space-y-6 font-medium">
+            <p>
+              Hey, my name is Maaz Siddiqi! I'm a passionate self-taught
+              developer who just started studying at Western University in Fall
+              2021. I'm enrolled in a Business and Computer Science double
+              degree program, and its been a blast so far!
+            </p>
+            <p>
+              Fun fact, I've actually moved around 10 times in my life already!
+              I was born in Karachi, Pakistan, and at the age of 7, my parents
+              took a leap of faith to bring my siblings here. We've had to move
+              around numerous times since then, but each experience was
+              unforgettable! I've met all kinds of people, picking up a variety
+              of skills in the process.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="relative flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-14 min-h-[25rem] bg-white p-14 z-[1]">
         <img
           src={sampleImg}
           alt=""
           className="aspect-video max-h-[12rem] lg:max-h-[18rem]"
         />
-        <div className="max-w-lg">
-          <h1 className="pb-2 font-semibold text-3xl">Main Title</h1>
-          <p className="pt-2 text-lg text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequuntur error vitae et neque ut dolores quos pariatur animi
-            suscipit nobis.
-          </p>
-        </div>
-      </section>
-
-      <section className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-x-14 min-h-[25rem] bg-gradient-to-br from-indigo-600 via-purple-600 to-fuchsia-500 p-14 z-[0]">
-        <img
-          src={sampleImg}
-          alt=""
-          className="aspect-video max-h-[12rem] lg:max-h-[18rem]"
-        />
-        <div className="max-w-lg text-slate-50">
-          <h1 className="pb-2 font-semibold text-3xl">Main Title</h1>
+        <div className="max-w-lg text-gray-500">
+          <h1 className="pb-2 font-semibold text-3xl text-gray-700">
+            Main Title
+          </h1>
           <p className="pt-2 text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Consequuntur error vitae et neque ut dolores quos pariatur animi
