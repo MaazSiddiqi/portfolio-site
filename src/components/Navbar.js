@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Btn from "./Btn";
 
+// Nav height = 90px
 export default function Navbar({ mainText, menuItems, special }) {
   const [showSideMenu, setShowSideMenu] = useState(false);
 
@@ -8,12 +9,15 @@ export default function Navbar({ mainText, menuItems, special }) {
     <nav className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 hover:bg-white transition-all duration-200 text-center text-gray-500  w-full z-50">
       <div className="flex justify-between w-full mx-10 md:mx-24 xl:mx-40">
         {/* Nav Main */}
-        <a href="#" className=" px-2 py-1 text-2xl font-mono bg-white/70 rounded-md border-b-2 border-indigo-600 hover:scale-105 hover:shadow-lg hover:rounded-2xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200">
+        <a
+          href="#"
+          className=" px-2 py-1 text-2xl font-mono bg-white/70 rounded-md border-b-2 border-indigo-600 hover:scale-105 hover:shadow-lg hover:rounded-2xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200"
+        >
           {mainText ? mainText : "Nav Main."}
         </a>
 
         {/* Nav Full Menu*/}
-        <span className='hidden md:flex space-x-4 font-light items-center'>
+        <span className="hidden md:flex space-x-4 font-light items-center">
           {Object.keys(menuItems).map((item) =>
             special.find((_item) => _item === item) ? (
               <Btn text={item} key={Math.random(1000000, 100000000)} />
@@ -53,7 +57,7 @@ export default function Navbar({ mainText, menuItems, special }) {
             />
           </svg>
         </button>
-        
+
         {/* Nav Condensed SideMenu Panel */}
         <div
           className={`${
