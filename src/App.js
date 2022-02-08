@@ -1,8 +1,10 @@
 import Navbar from "./components/Navbar";
 import MainHero from "./components/MainHero";
 import sampleImg from "./images/sample.svg";
+import CodeImg from "./images/RandomCode.jpeg";
 import FullSection from "./components/FullSection";
 import Card from "./components/Card";
+import Project from "./components/Project";
 function App() {
   return (
     <>
@@ -68,17 +70,18 @@ function App() {
             </div>
           </div>
 
+          {/* Cards */}
           <div className="flex flex-col space-y-5 md:flex-row md:space-y-0 md:space-x-5 justify-between">
-            <Card title="Employment" img={sampleImg}>
+            <Card title="Employment" grow>
               <div className="text-gray-500 mt-2">
                 <h2 className="mb-2 font-semibold bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-fuchsia-500 text-transparent">
                   Cashier / Self-Checkout Attendant
                 </h2>
-                <p>Walmart Inc.</p>
-                <p>Since July 2021</p>
+                <p className="font-light">Walmart Inc.</p>
+                <p className="font-light">Since July 2021</p>
               </div>
             </Card>
-            <Card title="Hobbies and Interests">
+            <Card title="Hobbies and Interests" grow>
               <ul className="text-gray-500 mt-2">
                 <li className="mb-2 font-semibold bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-fuchsia-500 text-transparent">
                   Basketball
@@ -117,7 +120,43 @@ function App() {
       </section> */}
 
       <FullSection>
-        <h1 className="">You want some proof eh?</h1>
+        <div className="flex flex-col items-center p-16 space-y-12 text-gray-500">
+          <div>
+            <h1 className="text-3xl text-center font-semibold text-gray-700 mb-6">
+              My Projects.
+            </h1>
+            <p>
+              Here are some of the projects I've worked on over the years. More
+              coming soon!
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <Project
+              title="Portfolio Site (this!)"
+              stack="HTML, CSS, TailwindCSS, JavaScript, ReactJS"
+              detail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, repudiandae? Enim dolor alias perferendis repudiandae."
+              img={CodeImg}
+            />
+            <Project
+              title="UWO Course Scrapper"
+              stack="Python, Requests, HTML, JSON, IO"
+              detail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, repudiandae? Enim dolor alias perferendis repudiandae."
+              link="https://github.com/MaazSiddiqi?tab=repositories"
+            />
+            <Project
+              title="Automated Camp Booker"
+              stack="Python, Selenium, HTML"
+              detail="Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, repudiandae? Enim dolor alias perferendis repudiandae."
+            />
+
+            <div>
+              <h1 className="text-xl text-center font-semibold gradient-text m-12 ">
+                And many more coming soon!
+              </h1>
+            </div>
+          </div>
+        </div>
       </FullSection>
     </>
   );
