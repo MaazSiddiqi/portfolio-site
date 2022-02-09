@@ -6,8 +6,11 @@ export default function Project({ title, stack, date, img, detail }) {
         <div className="space-y-4 bg-[./images/RandomCode.jpeg] max-w-4xl">
           <div>
             <h1 className="text-xl font-semibold text-gray-700">{title}</h1>
-            <h2 className="italic font-medium">
-              <span className="text-indigo-500">Tech Stack:</span> {stack}
+            <h2 className="italic font-normal">
+              Tech Stack:{" "}
+              <span className="sm:gradient-text text-indigo-500 font-light">
+                {stack}
+              </span>
             </h2>
             <h2 className="font-extralight">{date}</h2>
           </div>

@@ -11,7 +11,12 @@ function App() {
     <>
       <Navbar
         mainText="Maaz Siddiqi."
-        menuItems={{ Home: "#", About: "#about", Projects: "#", Contact: "#" }}
+        menuItems={{
+          Home: "#",
+          About: "#about",
+          Projects: "#projects",
+          Contact: "#",
+        }}
         special={["Contact"]}
       />
 
@@ -131,8 +136,8 @@ function App() {
               My Projects.
             </h1>
             <p>
-              <span className="font-semibold">My Tech Stack: </span>
-              <span className="gradient-text italic font-light">
+              <span className="font-medium">My Tech Stack: </span>
+              <span className="sm:gradient-text text-indigo-500 italic font-medium">
                 Java, TypeScript, Python, C#, Unity, HTML, CSS, JavaScript,
                 ReactJS, NodeJS, ExpressJS
               </span>
