@@ -5,6 +5,7 @@ import CodeImg from "./images/RandomCode.jpeg";
 import FullSection from "./components/FullSection";
 import Card from "./components/Card";
 import Project from "./components/Project";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -119,8 +120,12 @@ function App() {
         </div>
       </section> */}
 
+      {/* Projects */}
       <FullSection>
-        <div className="flex flex-col items-center p-16 space-y-12 text-gray-500">
+        <div
+          id="projects"
+          className="flex flex-col items-center p-16 space-y-12 text-gray-500"
+        >
           <div className="flex flex-col text-center">
             <h1 className="text-3xl text-center font-semibold text-gray-700 mb-6">
               My Projects.
@@ -162,7 +167,7 @@ function App() {
             <Project
               title="First Person 'Bunny Hop' Character Controller"
               stack="Unity, C#"
-              detail="With a sudden interest in game development, I dove into the Unity game engine and learnt C# to try make my own. I was having too much fun just working on the character controller, as I kept thinking of new features to add! I decided I wanted to replicate the movement mechanic known in many popular games such as CSGO, TitanFall, Apex Legends etc. known as 'Bunny Hopping'. After doing research on the mechanic and the clever vetor maths behind it, I was able to successfuly replicate a character controller with bunny hopping!"
+              detail="With a sudden interest in game development, I dove into the Unity game engine and learnt C# to try make my own. I was having too much fun just working on the character controller, as I kept thinking of new features to add! I decided I wanted to replicate the movement mechanic known in many popular games such as CSGO, TitanFall, Apex Legends etc. known as 'Bunny Hopping'. After doing research on the mechanic and the clever vector maths behind it, I was able to successfuly replicate a character controller with bunny hopping!"
               date="May 2021"
             />
             <Project
@@ -180,6 +185,8 @@ function App() {
           </div>
         </div>
       </FullSection>
+
+      <Footer />
     </>
   );
 }
