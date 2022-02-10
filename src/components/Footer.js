@@ -5,25 +5,25 @@ export default function Footer() {
       <div className="flex items-center space-x-4 text-slate-50 font-light p-2 px-4 rounded-lg">
         <a
           href="#"
-          className="hover:bg-white hover:text-gray-500 transition-all rounded-md px-2 py-1"
+          className="hover:bg-white hover:text-gray-500 basic-focus-animation transition-all rounded-md px-2 py-1"
         >
           Home
         </a>
         <a
           href="#about"
-          className="hover:bg-white hover:text-gray-500 transition-all rounded-md px-2 py-1"
+          className="hover:bg-white hover:text-gray-500 basic-focus-animation transition-all rounded-md px-2 py-1"
         >
           About
         </a>
         <a
           href="#projects"
-          className="hover:bg-white hover:text-gray-500 transition-all rounded-md px-2 py-1"
+          className="hover:bg-white hover:text-gray-500 basic-focus-animation transition-all rounded-md px-2 py-1"
         >
           Projects
         </a>
         <a
           href="#contact"
-          className="hover:bg-white hover:text-indigo-500 hover:font-medium transition-all rounded-md px-2 py-1"
+          className="hover:bg-white hover:text-indigo-500 hover:font-medium basic-focus-animation transition-all rounded-md px-2 py-1"
         >
           Contact
         </a>

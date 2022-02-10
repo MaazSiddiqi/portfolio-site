@@ -1,11 +1,12 @@
 import Navbar from "./components/Navbar";
 import MainHero from "./components/MainHero";
-import sampleImg from "./images/sample.svg";
-import CodeImg from "./images/RandomCode.jpeg";
 import FullSection from "./components/FullSection";
 import Card from "./components/Card";
 import Project from "./components/Project";
 import Footer from "./components/Footer";
+import Socials from "./components/Socials";
+import Button from "./components/Btn";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 function App() {
   return (
     <>
@@ -15,9 +16,10 @@ function App() {
           Home: "#",
           About: "#about",
           Projects: "#projects",
-          Contact: "#",
+          Contact: "#contact",
+          Resume: "#",
         }}
-        special={["Contact"]}
+        special={["Resume"]}
       />
 
       <MainHero>
@@ -154,7 +156,6 @@ function App() {
               stack="HTML, CSS, TailwindCSS, JavaScript, ReactJS"
               detail="My first complete website, built entirely from scratch using ReactJS! Also implemented styling using a very handy CSS library known as TailwindCSS."
               date="January 2022"
-              img={CodeImg}
             />
             <Project
               title="UWO Course Scrapper"
@@ -183,13 +184,80 @@ function App() {
             />
 
             <div>
-              <h1 className="text-xl text-center font-semibold gradient-text mt-14 ">
+              {/* <h1 className="text-xl text-center font-semibold gradient-text mt-14 ">
                 And many more coming soon!
-              </h1>
+              </h1> */}
+              <Card colour="border border-indigo-500">
+                <h1 className="text-xl text-center font-semibold gradient-text">
+                  And many more coming soon!
+                </h1>
+              </Card>
             </div>
           </div>
         </div>
       </FullSection>
+
+      <section
+        id="contact"
+        className="flex flex-col space-y-8 min-h-[25rem] p-14 bg-slate-50 text-gray-500"
+      >
+        <h1 className="text-3xl font-semibold text-gray-700">
+          Like what you see?{" "}
+          <span className="gradient-text">Get in touch!</span>
+        </h1>
+
+        <div className="flex justify-center">
+          <div className="flex flex-col grow space-y-6">
+            <div>
+              <h2 className="font-light text-sm">Email</h2>
+              <p className="text-lg font-medium">maazali22@gmail.com</p>
+            </div>
+            <div>
+              <h2 className="font-light text-sm">Email</h2>
+              <p className="text-lg">maazali22@gmail.com</p>
+            </div>
+          </div>
+
+          <div className="flex grow">Email Directly</div>
+        </div>
+      </section>
+
+      <section className="flex flex-col lg:flex-row min-h-fit m-8 md:m-16 md:mx-20 border">
+        <div className="flex flex-col h-auto min-w-fit bg-gray-100 p-8 md:p-12">
+          <h1 className="text-3xl font-semibold text-gray-700 pb-8">
+            Like what you see?{" "}
+            <span className="gradient-text whitespace-nowrap">
+              Get in touch!
+            </span>
+          </h1>
+
+          <div className="flex flex-col grow space-y-6">
+            <div>
+              <h2 className="font-light text-sm">Email</h2>
+              <p className="text-lg font-medium">maazali22@gmail.com</p>
+            </div>
+            <div className="space-y-4">
+              <h2 className="font-light text-sm">Links</h2>
+              <div className="flex flex-col space-y-3">
+                <Socials
+                  Icon={FaGithub}
+                  href="https://github.com/MaazSiddiqi"
+                  suffix="/MaazSiddiqi"
+                />
+                <Socials
+                  Icon={FaLinkedinIn}
+                  href="https://www.linkedin.com/in/maaz-siddiqi/"
+                  suffix="/maaz-siddiqi"
+                />
+              </div>
+            </div>
+            <div className="pt-2">
+              <Button text="Resume" />
+            </div>
+          </div>
+        </div>
+        {/* <div>h1</div> */}
+      </section>
 
       <Footer />
     </>
