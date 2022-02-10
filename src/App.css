@@ -8,16 +8,8 @@
     overflow: overlay;
   }
 
-  .basic-focus-animation {
-    @apply hover:scale-105 hover:shadow-lg transition-all duration-200;
-  }
-
-  .basic-active-animation {
-    @apply active:scale-95 active:shadow-inner transition-all duration-200;
-  }
-
-  .hero-image {
-    @apply h-full min-w-max absolute top-0 -right-[95%] sm:-right-[50%] md:-right-[30%] lg:-right-[10%] -z-[1];
+  input {
+    @apply border focus-within:ring-2 focus-within:ring-fuchsia-500 focus-within:ring-offset-2 transition-all;
   }
 
   ::-webkit-scrollbar {
@@ -41,6 +33,19 @@
     @apply m-0 p-0 text-gray-500 group-hover:text-indigo-500;
     height: 1.25rem;
     width: 1.25rem;
+  }
+  .hero-image {
+    @apply h-full min-w-max absolute top-0 -right-[95%] sm:-right-[50%] md:-right-[30%] lg:-right-[10%] -z-[1];
+  }
+}
+
+@layer utilities {
+  .basic-focus-animation {
+    @apply hover:scale-105 hover:shadow-lg transition-all duration-200;
+  }
+
+  .basic-active-animation {
+    @apply active:scale-95 active:shadow-inner transition-all duration-200;
   }
 }
 
