@@ -1,6 +1,14 @@
-import React from "react";
+import React from "react"
 
-export default function Input({ label, type, placeholder, className }) {
+export default function Input({
+  label,
+  type,
+  value,
+  onChange,
+  placeholder,
+  className,
+  required,
+}) {
   return (
     <div className={`flex flex-col shrink ${className ? className : ""}`}>
       <label
@@ -13,8 +21,10 @@ export default function Input({ label, type, placeholder, className }) {
         name={`${label}-input`}
         type={type ? type : "text"}
         placeholder={placeholder ? placeholder : ""}
+        value={value}
+        onChange={onChange ? onChange : () => {}}
         className="py-2 px-3 rounded-md text-sm font-light text-gray-500"
       />
     </div>
-  );
+  )
 }

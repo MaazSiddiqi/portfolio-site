@@ -1,10 +1,10 @@
 import { IconContext } from "react-icons";
 
-export default function Socials({ link, Icon, suffix }) {
+export default function Socials({ href, Icon, suffix }) {
   return (
     <IconContext.Provider value={{ className: "icon" }}>
       <a
-        href={link ? link : "#"}
+        href={href ? href : "#"}
         target="_blank"
         className="flex items-center whitespace-nowrap space-x-1 basic-focus-animation basic-active-animation w-fit rounded-md icon group"
       >

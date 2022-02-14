@@ -1,14 +1,21 @@
-import Navbar from "./components/Navbar";
-import MainHero from "./components/MainHero";
-import FullSection from "./components/FullSection";
-import Card from "./components/Card";
-import Project from "./components/Project";
-import Footer from "./components/Footer";
-import Socials from "./components/Socials";
-import Button from "./components/Btn";
-import Input from "./components/Input";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import Navbar from "./components/Navbar"
+import MainHero from "./components/MainHero"
+import FullSection from "./components/FullSection"
+import Card from "./components/Card"
+import Project from "./components/Project"
+import Footer from "./components/Footer"
+import Socials from "./components/Socials"
+import Button from "./components/Btn"
+import Input from "./components/Input"
+import ContactForm from "./components/ContactForm"
+import { FaLinkedinIn, FaGithub } from "react-icons/fa"
+
 function App() {
+  const sendEmail = (e) => {
+    e.preventDefault()
+    console.log(e)
+  }
+
   return (
     <>
       <Navbar
@@ -224,7 +231,7 @@ function App() {
         id="contact"
         className="flex flex-col lg:flex-row min-h-fit m-8 md:m-16 md:mx-20 border"
       >
-        <div className="flex flex-col lg:max-w-[50%] grow bg-gray-50 p-8 md:p-12">
+        <div className="flex flex-col lg:max-w-[50%] grow bg-gray-50 p-8 md:p-12 rounded-l-xl">
           <h1 className="text-3xl font-semibold text-gray-700 pb-8">
             Like what you see?{" "}
             <span className="gradient-text whitespace-nowrap">
@@ -258,43 +265,13 @@ function App() {
           </div>
         </div>
         <div className="flex flex-col lg:max-w-[50%] grow p-8 md:p-12">
-          <form action="" className="space-y-3">
-            <div className="flex flex-col lg:flex-row lg:space-x-4">
-              <Input label="First Name" placeholder="John" />
-              <Input label="Last Name" placeholder="Doe" />
-            </div>
-
-            <Input
-              label="Email"
-              type="email"
-              placeholder="johndoe@example.com"
-            />
-            <Input
-              label="Subject"
-              placeholder="Maaz, your story has touched the depths of my soul..."
-            />
-
-            <div className="flex flex-col shrink">
-              <label
-                htmlFor="contact-body"
-                className="font-extralight text-xs py-[0.125rem] px-1 text-fuchsia-500"
-              >
-                Body
-              </label>
-              <textarea
-                name="contact-body"
-                className="p-3 border rounded-md text-sm font-light text-gray-500 min-h-[50px] h-fit focus-within:ring-2 focus-within:ring-fuchsia-500 focus-within:ring-offset-2 transition-all"
-              />
-            </div>
-
-            <Button text="Send" className="w-full" bg="bg-fuchsia-500" />
-          </form>
+          <ContactForm />
         </div>
       </section>
 
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
