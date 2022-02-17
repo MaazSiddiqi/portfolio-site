@@ -235,7 +235,7 @@ function App() {
               </div>
             </div>
             <div className="pt-2 align-bottom">
-              <a href={ResumePDF} target="_blank" rel="noopener">
+              <a href={ResumePDF} target="_blank" rel="noreferrer">
                 <Button text="Resume" />
               </a>
             </div>

@@ -1,4 +1,4 @@
-import { IconContext } from "react-icons";
+import { IconContext } from "react-icons"
 
 export default function Socials({ href, Icon, suffix }) {
   return (
@@ -6,6 +6,7 @@ export default function Socials({ href, Icon, suffix }) {
       <a
         href={href ? href : "#"}
         target="_blank"
+        rel="noreferrer"
         className="flex items-center whitespace-nowrap space-x-1 basic-focus-animation basic-active-animation w-fit rounded-md icon group"
       >
         <Icon />
@@ -16,5 +17,5 @@ export default function Socials({ href, Icon, suffix }) {
         )}
       </a>
     </IconContext.Provider>
-  );
+  )
 }

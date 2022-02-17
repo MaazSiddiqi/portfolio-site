@@ -4,7 +4,7 @@ export default function Footer() {
       <h1 className="font-semibold text-xl">Maaz Siddiqi.</h1>
       <div className="flex items-center space-x-4 text-slate-50 font-light p-2 px-4 rounded-lg">
         <a
-          href="#"
+          href="#top"
           className="hover:bg-white hover:text-gray-500 basic-focus-animation transition-all rounded-md px-2 py-1"
         >
           Home
@@ -29,5 +29,5 @@ export default function Footer() {
         </a>
       </div>
     </div>
-  );
+  )
 }
