@@ -9,7 +9,7 @@
   }
 
   input {
-    @apply border focus-within:ring-2 focus-within:ring-fuchsia-500 focus-within:ring-offset-2 transition-all;
+    @apply border focus-within:ring-2 focus-within:ring-fuchsia-500 focus-within:ring-offset-2 transition-all autofill:bg-fuchsia-500;
   }
 
   ::-webkit-scrollbar {

@@ -10,7 +10,7 @@ export default function Input({
   required,
 }) {
   return (
-    <div className={`flex flex-col shrink ${className ? className : ""}`}>
+    <div className={`flex flex-col shrink grow ${className ? className : ""}`}>
       <label
         htmlFor={`${label}-input`}
         className="font-extralight text-xs py-[0.125rem] px-1 text-fuchsia-500"

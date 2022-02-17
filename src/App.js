@@ -11,11 +11,6 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
 
 function App() {
-  const sendEmail = (e) => {
-    e.preventDefault()
-    console.log(e)
-  }
-
   return (
     <>
       <Navbar
