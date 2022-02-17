@@ -23,6 +23,7 @@ export default function Input({
         placeholder={placeholder ? placeholder : ""}
         value={value}
         onChange={onChange ? onChange : () => {}}
+        required={required ? true : false}
         className="py-2 px-3 rounded-md text-sm font-light text-gray-500"
       />
     </div>

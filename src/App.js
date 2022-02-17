@@ -6,9 +6,9 @@ import Project from "./components/Project"
 import Footer from "./components/Footer"
 import Socials from "./components/Socials"
 import Button from "./components/Btn"
-import Input from "./components/Input"
 import ContactForm from "./components/ContactForm"
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
+import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
 
 function App() {
   const sendEmail = (e) => {
@@ -25,7 +25,7 @@ function App() {
           About: "#about",
           Projects: "#projects",
           Contact: "#contact",
-          Resume: "#",
+          Resume: ResumePDF,
         }}
         special={["Resume"]}
       />
@@ -260,7 +260,9 @@ function App() {
               </div>
             </div>
             <div className="pt-2 align-bottom">
-              <Button text="Resume" />
+              <a href={ResumePDF} target="_blank">
+                <Button text="Resume" />
+              </a>
             </div>
           </div>
         </div>

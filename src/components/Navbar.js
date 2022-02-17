@@ -1,9 +1,9 @@
-import { useState } from "react";
-import Btn from "./Btn";
+import { useState } from "react"
+import Btn from "./Btn"
 
 // Nav height = 90px
 export default function Navbar({ mainText, menuItems, special }) {
-  const [showSideMenu, setShowSideMenu] = useState(false);
+  const [showSideMenu, setShowSideMenu] = useState(false)
 
   return (
     <nav className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 hover:bg-white transition-all duration-200 text-center text-gray-500  w-full z-50">
@@ -20,7 +20,13 @@ export default function Navbar({ mainText, menuItems, special }) {
         <span className="hidden md:flex space-x-4 font-light items-center">
           {Object.keys(menuItems).map((item) =>
             special.find((_item) => _item === item) ? (
-              <Btn text={item} key={Math.random(1000000, 100000000)} />
+              <a
+                href={menuItems[item]}
+                target="_blank"
+                key={Math.random(1000000, 100000000)}
+              >
+                <Btn text={item} />
+              </a>
             ) : (
               <a
                 href={menuItems[item]}
@@ -36,7 +42,7 @@ export default function Navbar({ mainText, menuItems, special }) {
         {/* Nav Condensed Sidemenu Button */}
         <button
           onClick={(e) => {
-            setShowSideMenu(!showSideMenu);
+            setShowSideMenu(!showSideMenu)
           }}
           className={`md:hidden ${
             showSideMenu ? "hidden" : ""
@@ -67,7 +73,7 @@ export default function Navbar({ mainText, menuItems, special }) {
           <ul className="w-full text-right">
             <button
               onClick={(e) => {
-                setShowSideMenu(!showSideMenu);
+                setShowSideMenu(!showSideMenu)
               }}
             >
               <li className="pt-8 pb-2 px-6 group w-full hover:cursor-pointer">
@@ -92,15 +98,16 @@ export default function Navbar({ mainText, menuItems, special }) {
               special.find((_item) => _item === item) ? (
                 <a
                   href={menuItems[item]}
+                  target="_blank"
                   className=""
-                  key={Math.random(1000000, 100000000)}
+                  key={`NavItem${item}`}
                 >
                   <li className="w-full cursor-pointer text-violet-600 hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5">
                     {item}
                   </li>
                 </a>
               ) : (
-                <a href={menuItems[item]} key={Math.random(1000000, 100000000)}>
+                <a href={menuItems[item]} key={`NavItem${item}`}>
                   <li className="w-full cursor-pointer hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5">
                     {item}
                   </li>
@@ -111,5 +118,5 @@ export default function Navbar({ mainText, menuItems, special }) {
         </div>
       </div>
     </nav>
-  );
+  )
 }
