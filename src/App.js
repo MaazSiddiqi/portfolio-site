@@ -205,27 +205,7 @@ function App() {
         </div>
       </FullSection>
 
-      <section className="flex flex-col space-y-8 min-h-[25rem] p-14 bg-slate-50 text-gray-500">
-        <h1 className="text-3xl font-semibold text-gray-700">
-          Like what you see?{" "}
-          <span className="gradient-text">Get in touch!</span>
-        </h1>
-
-        <div className="flex justify-center">
-          <div className="flex flex-col grow space-y-6">
-            <div>
-              <h2 className="font-light text-sm">Email</h2>
-              <p className="text-lg font-medium">maazali22@gmail.com</p>
-            </div>
-            <div>
-              <h2 className="font-light text-sm">Email</h2>
-              <p className="text-lg">maazali22@gmail.com</p>
-            </div>
-          </div>
-
-          <div className="flex grow">Email Directly</div>
-        </div>
-      </section>
+      <section className="flex flex-col space-y-8 min-h-[25rem] p-14 bg-slate-50 text-gray-500"></section>
 
       <section
         id="contact"
@@ -266,9 +246,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:max-w-[50%] grow p-8 md:p-12">
-          <ContactForm />
-        </div>
+        <ContactForm />
       </section>
 
       <Footer />
