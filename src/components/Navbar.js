@@ -50,16 +50,16 @@ export default function Navbar({ mainText, menuItems, special }) {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8"
+            className="h-7 w-7"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 8h16M4 16h16"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 10h16M4 14h16M4 18h16"
             />
           </svg>
         </button>
@@ -82,7 +82,7 @@ export default function Navbar({ mainText, menuItems, special }) {
                   className="h-6 w-6 stroke-indigo-600 group-hover:scale-125 group-hover:rotate-180 transition-all duration-200"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="indigi"
+                  stroke="currentColor"
                 >
                   <path
                     strokeLinecap="round"
