@@ -200,8 +200,6 @@ function App() {
         </div>
       </FullSection>
 
-      <section className="flex flex-col space-y-8 min-h-[25rem] p-14 bg-slate-50 text-gray-500"></section>
-
       <section
         id="contact"
         className="flex flex-col lg:flex-row min-h-fit m-8 md:m-16 md:mx-20 border"
