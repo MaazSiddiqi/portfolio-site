@@ -1,9 +1,5 @@
 import Navbar from "./components/Navbar"
-import MainHero from "./components/MainHero"
-import About from "./components/About"
-import Projects from "./components/ProjectsSection"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
+import Home from "./components/Pages/Home"
 import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
 
 function App() {
@@ -21,15 +17,7 @@ function App() {
         special={["Resume"]}
       />
 
-      <MainHero />
-
-      <About />
-
-      <Projects />
-
-      <Contact />
-
-      <Footer />
+      <Home />
     </>
   )
 }
