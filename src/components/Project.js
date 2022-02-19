@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "./Card"
 export default function Project({ title, stack, date, img, detail }) {
   return (
     <div className="flex flex-col items-center">
@@ -18,5 +18,5 @@ export default function Project({ title, stack, date, img, detail }) {
         </div>
       </Card>
     </div>
-  );
+  )
 }
