@@ -54,3 +54,7 @@
 #contact {
   scroll-margin: 90px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
