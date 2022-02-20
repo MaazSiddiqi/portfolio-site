@@ -1,12 +1,47 @@
 import { useState } from "react"
 import Btn from "./Btn"
+import { motion, AnimatePresence } from "framer-motion"
+import NavSideMenu from "./NavSideMenu"
+
+const enterNav = {
+  out: {
+    y: -100,
+  },
+  in: {
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+}
+
+const enterSideMenu = {
+  out: {
+    x: -100,
+    transition: {
+      duration: 0.4,
+    },
+  },
+  in: {
+    x: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+}
 
 // Nav height = 90px
 export default function Navbar({ mainText, menuItems, special }) {
   const [showSideMenu, setShowSideMenu] = useState(false)
 
   return (
-    <nav className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500  w-screen z-50">
+    <motion.nav
+      key="nav"
+      variants={enterNav}
+      initial="out"
+      animate="in"
+      className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500  w-screen z-50"
+    >
       <div className="flex justify-between w-screen mx-0 px-8 md:px-[4rem] lg:px-40">
         {/* Nav Main */}
         <a
@@ -43,7 +78,7 @@ export default function Navbar({ mainText, menuItems, special }) {
         {/* Nav Condensed Sidemenu Button */}
         <button
           onClick={(e) => {
-            setShowSideMenu(!showSideMenu)
+            setShowSideMenu(true)
           }}
           className={`md:hidden ${
             showSideMenu ? "hidden" : ""
@@ -65,62 +100,16 @@ export default function Navbar({ mainText, menuItems, special }) {
           </svg>
         </button>
 
-        {/* Nav Condensed SideMenu Panel */}
-        <div
-          className={`${
-            showSideMenu
-              ? "translate-x-[0%] opacity-100"
-              : "opacity-0 translate-x-[100%]"
-          } md:hidden bg-gradient-to-l from-white via-white/[70%] fixed top-0 right-0 h-screen w-3/4 font-light transition-all duration-200`}
-        >
-          <ul className="w-full text-right">
-            <button
-              onClick={(e) => {
-                setShowSideMenu(!showSideMenu)
-              }}
-            >
-              <li className="pt-8 pb-2 px-6 group w-full hover:cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 stroke-indigo-600 group-hover:scale-125 group-hover:rotate-180 transition-all duration-200"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </li>
-            </button>
-
-            {Object.keys(menuItems).map((item) =>
-              special.find((_item) => _item === item) ? (
-                <a
-                  href={menuItems[item]}
-                  target="_blank"
-                  rel="noreferrer"
-                  className=""
-                  key={`NavItem${item}`}
-                >
-                  <li className="w-full cursor-pointer text-violet-600 hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5">
-                    {item}
-                  </li>
-                </a>
-              ) : (
-                <a href={menuItems[item]} key={`NavItem${item}`}>
-                  <li className="w-full cursor-pointer hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5">
-                    {item}
-                  </li>
-                </a>
-              )
-            )}
-          </ul>
-        </div>
+        <AnimatePresence>
+          {showSideMenu && (
+            <NavSideMenu
+              menuItems={menuItems}
+              special={special}
+              setShow={setShowSideMenu}
+            />
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   )
 }

@@ -28,12 +28,12 @@ export default function Contact() {
               <Socials
                 Icon={FaGithub}
                 href="https://github.com/MaazSiddiqi"
-                suffix="/MaazSiddiqi"
+                suffix="/ MaazSiddiqi"
               />
               <Socials
                 Icon={FaLinkedinIn}
                 href="https://www.linkedin.com/in/maaz-siddiqi/"
-                suffix="/maaz-siddiqi"
+                suffix="/ maaz-siddiqi"
               />
             </div>
           </div>

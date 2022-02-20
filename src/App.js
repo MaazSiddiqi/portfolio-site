@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import Navbar from "./components/Navbar"
 import Home from "./components/Pages/Home"
-import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
 import LoadingSite from "./components/Pages/LoadingSite"
+import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
+import { motion, AnimatePresence } from "framer-motion"
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -17,7 +18,7 @@ function App() {
   }, [])
 
   return (
-    <>
+    <AnimatePresence>
       {loading ? (
         <LoadingSite />
       ) : (
@@ -36,7 +37,7 @@ function App() {
           <Home />
         </>
       )}
-    </>
+    </AnimatePresence>
   )
 }
 

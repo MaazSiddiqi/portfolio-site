@@ -7,7 +7,7 @@ export default function Socials({ href, Icon, suffix }) {
         href={href ? href : "#"}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center whitespace-nowrap space-x-1 basic-focus-animation basic-active-animation w-fit rounded-md icon group"
+        className="flex items-center whitespace-nowrap space-x-1 hover:scale-105 active:scale-95 w-fit rounded-md icon group transition-all duration-200"
       >
         <Icon />
         {suffix && (
