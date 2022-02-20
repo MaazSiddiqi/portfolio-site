@@ -35,7 +35,7 @@
     width: 1.25rem;
   }
   .hero-image {
-    @apply h-full min-w-max absolute top-0 -right-[95%] sm:-right-[50%] md:-right-[30%] lg:-right-[10%] -z-[1];
+    @apply h-full min-w-max absolute top-0 -right-[95%] sm:-right-[50%] md:-right-[30%] lg:-right-[10%] -z-[1] transition-all duration-100;
   }
 }
 
