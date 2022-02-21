@@ -11,7 +11,7 @@ const enterSidePanel = {
       type: "tween",
       duration: 0.4,
       ease: "easeOut",
-      delayChildren: 1,
+      delayChildren: 0.2,
     },
   },
   exit: {
@@ -22,16 +22,24 @@ const enterSidePanel = {
   },
 }
 
-const enterItem = {
-  initial: {
+const enterList = {
+  hidden: {
     opacity: 0,
   },
-  animate: {
+  visible: {
     opacity: 1,
     transition: {
-      duration: 0.2,
-      staggerChildren: 1,
+      staggerChildren: 10,
     },
+  },
+}
+
+const enterItem = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
   },
 }
 
@@ -47,11 +55,16 @@ export default function NavSideMenu({ menuItems, special, setShow }) {
       }}
       className="flex flex-col align-top md:hidden bg-gradient-to-l from-white via-white/[70%] fixed top-0 right-0 h-screen w-1/2 font-light"
     >
-      <ul className="w-full h-full text-right">
+      <motion.ul
+        variants={enterList}
+        initial="hidden"
+        animate="visible"
+        className="w-full h-full text-right"
+      >
         <motion.li
           variants={enterItem}
-          initial="initial"
-          animate="animate"
+          initial="hidden"
+          animate="visible"
           className="flex justify-end pt-8 pb-2 px-6 group hover:cursor-pointer"
         >
           <svg
@@ -72,40 +85,40 @@ export default function NavSideMenu({ menuItems, special, setShow }) {
 
         {Object.keys(menuItems).map((item) =>
           special.find((_item) => _item === item) ? (
-            <motion.li
-              variants={enterItem}
-              initial="initial"
-              animate="animate"
-              className="w-full cursor-pointer text-violet-600 hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5"
+            <a
+              href={menuItems[item]}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full h-full"
+              key={`NavItem${item}`}
             >
-              <a
-                href={menuItems[item]}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full h-full"
-                key={`NavItem${item}`}
+              <motion.li
+                variants={enterItem}
+                initial="hidden"
+                animate="visible"
+                className="w-full cursor-pointer text-violet-600 hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5"
               >
                 {item}
-              </a>
-            </motion.li>
+              </motion.li>
+            </a>
           ) : (
-            <motion.li
-              variants={enterItem}
-              initial="initial"
-              animate="animate"
-              className="w-full cursor-pointer hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5"
+            <a
+              href={menuItems[item]}
+              key={`NavItem${item}`}
+              className="w-full h-full"
             >
-              <a
-                href={menuItems[item]}
-                key={`NavItem${item}`}
-                className="w-full h-full"
+              <motion.li
+                variants={enterItem}
+                initial="hidden"
+                animate="visible"
+                className=" w-full cursor-pointer hover:border-r-4 hover:border-violet-600 transition-all duration-200 p-5"
               >
                 {item}
-              </a>
-            </motion.li>
+              </motion.li>
+            </a>
           )
         )}
-      </ul>
+      </motion.ul>
     </motion.button>
   )
 }
