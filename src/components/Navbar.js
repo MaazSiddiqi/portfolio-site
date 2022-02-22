@@ -6,11 +6,14 @@ import NavSideMenu from "./NavSideMenu"
 const enterNav = {
   out: {
     y: -100,
+    opacity: 0,
   },
   in: {
     y: 0,
+    opacity: 1,
     transition: {
-      duration: 0.6,
+      delay: 0.8,
+      duration: 0.8,
     },
   },
 }

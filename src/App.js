@@ -9,16 +9,18 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const load = async () => {
+    const load = async (time) => {
       await setTimeout(() => {
         setLoading(false)
-      }, 3000)
+      }, time)
     }
-    load()
+
+    // load(0)
+    load(2500)
   }, [])
 
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       {loading ? (
         <LoadingSite />
       ) : (
@@ -34,6 +36,7 @@ function App() {
             }}
             special={["Resume"]}
           />
+
           <Home />
         </>
       )}
