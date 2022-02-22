@@ -1,10 +1,7 @@
-import React, { useState, Fragment } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import React from "react"
 import Card from "./Card"
 
 export default function About() {
-  const [selected, setSelected] = useState(null)
-
   return (
     <section
       id="about"

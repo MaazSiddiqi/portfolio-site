@@ -1,6 +1,6 @@
 import React from "react"
-import { motion, useAnimation } from "framer-motion"
-import WaveSVG from "../../images/Wave1.svg"
+import { motion } from "framer-motion"
+// import WaveSVG from "../../images/Wave1.svg"
 
 const animationDuration = 1
 

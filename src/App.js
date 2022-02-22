@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar"
 import Home from "./components/Pages/Home"
 import LoadingSite from "./components/Pages/LoadingSite"
 import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 
 function App() {
   const [loading, setLoading] = useState(true)
