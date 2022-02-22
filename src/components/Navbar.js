@@ -18,20 +18,20 @@ const enterNav = {
   },
 }
 
-const enterSideMenu = {
-  out: {
-    x: -100,
-    transition: {
-      duration: 0.4,
-    },
-  },
-  in: {
-    x: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-}
+// const enterSideMenu = {
+//   out: {
+//     x: -100,
+//     transition: {
+//       duration: 0.4,
+//     },
+//   },
+//   in: {
+//     x: 0,
+//     transition: {
+//       duration: 0.6,
+//     },
+//   },
+// }
 
 // Nav height = 90px
 export default function Navbar({ mainText, menuItems, special }) {
