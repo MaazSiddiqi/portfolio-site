@@ -2,7 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 // import WaveSVG from "../../images/Wave1.svg"
 
-const animationDuration = 1
+const animationDuration = 0.7
 
 export default function LoadingSite() {
   return (
@@ -20,6 +20,7 @@ export default function LoadingSite() {
       <div>
         <div className="relative">
           <motion.div
+            layoutId="nav-main-button"
             initial={{
               scale: 1.05,
             }}

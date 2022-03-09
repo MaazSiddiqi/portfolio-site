@@ -39,13 +39,17 @@ export default function Navbar({ mainText, menuItems, special }) {
 
   return (
     <motion.nav
-      key="nav"
-      variants={enterNav}
-      initial="out"
-      animate="in"
+      // key="nav"
+      // variants={enterNav}
+      // initial="out"
+      // animate="in"
       className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500  w-screen z-50"
     >
-      <div className="flex justify-between w-screen mx-0 px-8 md:px-[4rem] lg:px-40">
+      <motion.div
+        layoutId="nav-main-button"
+        layout="position"
+        className="flex justify-between w-screen mx-0 px-8 md:px-[4rem] lg:px-40"
+      >
         {/* Nav Main */}
         <a
           href="#top"
@@ -55,7 +59,12 @@ export default function Navbar({ mainText, menuItems, special }) {
         </a>
 
         {/* Nav Full Menu*/}
-        <span className="hidden md:flex space-x-3 lg:space-x-4 font-light items-center">
+        <motion.span
+          variants={enterNav}
+          initial="out"
+          animate="in"
+          className="hidden md:flex space-x-3 lg:space-x-4 font-light items-center"
+        >
           {Object.keys(menuItems).map((item) =>
             special.find((_item) => _item === item) ? (
               <a
@@ -76,10 +85,13 @@ export default function Navbar({ mainText, menuItems, special }) {
               </a>
             )
           )}
-        </span>
+        </motion.span>
 
         {/* Nav Condensed Sidemenu Button */}
-        <button
+        <motion.button
+          variants={enterNav}
+          initial="out"
+          animate="in"
           onClick={(e) => {
             setShowSideMenu(true)
           }}
@@ -101,7 +113,7 @@ export default function Navbar({ mainText, menuItems, special }) {
               d="M4 6h16M4 10h16M4 14h16M4 18h16"
             />
           </svg>
-        </button>
+        </motion.button>
 
         <AnimatePresence>
           {showSideMenu && (
@@ -112,7 +124,7 @@ export default function Navbar({ mainText, menuItems, special }) {
             />
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
     </motion.nav>
   )
 }

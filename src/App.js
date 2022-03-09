@@ -16,7 +16,7 @@ function App() {
     }
 
     // load(0)
-    load(2500)
+    load(1500)
   }, [])
 
   return (

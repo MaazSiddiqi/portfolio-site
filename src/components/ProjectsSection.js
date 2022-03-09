@@ -35,7 +35,7 @@ export default function ProjectsSection() {
           />
           <Project
             title="UWO Course Scrapper"
-            stack="Python, Requests, HTML, JSON, IO"
+            stack="Python, Requests, BeautifulSoup, HTML, JSON, IO"
             detail="After realizing how difficult it was to retrieve my university's course data, I decided to implement my own method of obtaining this data. Written in Python, I used the Requests library to send requests to one our calender planning sites. Using the rendered HTML, I parsed out my relevant information and organized it into a neat JSON file and exported it to a subdirectory using File IO."
             date="July 2021"
             link="https://github.com/MaazSiddiqi?tab=repositories"
