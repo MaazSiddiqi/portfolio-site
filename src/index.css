@@ -27,7 +27,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-fuchsia-500 text-transparent;
+    @apply bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-fuchsia-400 text-transparent;
   }
   .icon {
     @apply m-0 p-0 text-gray-500 group-hover:text-indigo-500;
