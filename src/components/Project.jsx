@@ -8,7 +8,7 @@ export default function Project({ title, stack, date, img, detail }) {
             <h1 className="text-xl font-semibold text-gray-700">{title}</h1>
             <h2 className="italic font-normal">
               Tech Stack:{" "}
-              <span className="sm:gradient-text text-indigo-500 font-light">
+              <span className="sm:gradient-text text-fuchsia-600 font-light">
                 {stack}
               </span>
             </h2>
