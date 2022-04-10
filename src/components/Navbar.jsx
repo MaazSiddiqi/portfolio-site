@@ -5,16 +5,16 @@ import NavSideMenu from "./NavSideMenu"
 
 const enterNav = {
   out: {
-    y: '-50%',
+    y: '-25%',
     opacity: 0,
   },
   in: {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.2,
+      delay: 0.3,
       duration: 1,
-      ease: 'easeIn',
+      ease: 'easeInOut',
     },
   },
 }
