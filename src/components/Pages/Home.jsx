@@ -3,7 +3,7 @@ import About from "../About"
 import Contact from "../Contact"
 import Footer from "../Footer"
 import MainHero from "../MainHero"
-import Projects from "../ProjectsSection"
+import Projects from "../Projects"
 
 export default function Home() {
   return (
