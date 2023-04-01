@@ -1,18 +1,18 @@
-import React, { Fragment } from "react"
+import React from "react"
 import About from "../About"
 import Contact from "../Contact"
+import Experience from "../Experience"
 import Footer from "../Footer"
 import MainHero from "../MainHero"
-import Projects from "../Projects"
 
 export default function Home() {
   return (
-    <Fragment className="">
+    <>
       <MainHero />
       <About />
-      <Projects />
+      <Experience />
       <Contact />
       <Footer />
-    </Fragment>
+    </>
   )
 }
