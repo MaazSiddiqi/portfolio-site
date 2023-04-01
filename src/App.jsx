@@ -30,7 +30,7 @@ function App() {
             menuItems={{
               Home: "#",
               About: "#about",
-              Projects: "#projects",
+              Experience: "#experiences",
               Contact: "#contact",
               Resume: ResumePDF,
             }}
