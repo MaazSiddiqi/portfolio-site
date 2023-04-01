@@ -1,5 +1,4 @@
 import React from "react"
-import Card from "./Card"
 
 export default function About() {
   return (
@@ -26,7 +25,7 @@ export default function About() {
               of skills in the process.
             </p>
             <p className="font-light">
-              <span className="text-white mb-2 font-semibold text-transparent">
+              <span className="!text-white mb-2 font-semibold text-transparent">
                 Interests:
               </span>{" "}
               Machine learning and AI, Augmented Reality, Hackathons, Fitness,
