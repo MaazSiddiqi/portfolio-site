@@ -1,17 +1,25 @@
 import React from "react"
-import Project from "./Project"
-import Card from "./Card"
-import { useState } from "react"
+import Card from "./Cards/Card"
+import Project from "./Cards/Project"
 
 // Typically would be retrived through db
-const projects = [
+export const projects = [
   {
-    title: "Portfolio Site (this!)",
-    stack: "HTML, CSS, TailwindCSS, JavaScript, ReactJS",
+    title: "EYES.py (Hack the North 2022)",
+    stack: "Python, Adhawk SD Kit",
     detail:
-      "My first complete website, built entirely from scratch using ReactJS! Also implemented styling using a very handy CSS library known as TailwindCSS.",
-    date: "January 2022",
-    link: "",
+      "Created an analytics tool to generate heatmaps using vision detection for insight on user attention direction on a site. Utilized Adhawk Microsystem's MindLink eye-tracking glasses to get user vision coordinates on screen as input for custom heatmap generation algorithm with scalable precision.",
+    date: "Sept. 2022",
+    link: "https://github.com/MaazSiddiqi?tab=repositories",
+  },
+  {
+    title: "UWO Timetables",
+    stack:
+      "ReactJS, NextJS, Redux, TailwindCSS, NodeJS, NextAuth, Prisma, PostgreSQL",
+    detail:
+      "The UWO Timetables project is a smart student organization hub aimed at modernizing the course selection process at Western University. The project includes features such as degree assisted course planning, course and professor reviews, and assignment deadline and grade calculation tools. Web scrapers were built in Python for public university sites to extract course data from Western's database.",
+    date: "April 2022",
+    link: "https://github.com/MaazSiddiqi?tab=repositories",
   },
   {
     title: "UWO Course Scrapper",
@@ -48,49 +56,17 @@ const projects = [
 ]
 
 export default function Projects() {
-  const [open, setOpen] = useState("")
-
   return (
-    <section className="min-h-screen bg-white ">
-      <div
-        id="projects"
-        className="flex flex-col items-center p-16 space-y-12 text-gray-500"
-      >
-        <div className="flex flex-col text-center">
-          <h1 className="text-3xl text-center font-semibold text-gray-700 mb-6">
-            My Projects.
-          </h1>
-          <p>
-            <span className="font-medium">My Tech Stack: </span>
-            <span className="sm:gradient-text text-indigo-500 italic font-medium">
-              Java, TypeScript, Python, C#, Unity, HTML, CSS, JavaScript,
-              ReactJS, NodeJS, ExpressJS
-            </span>
-          </p>
-          <p>
-            Here are some of the projects I've worked on over the years. More
-            coming soon!
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          {projects.map(({ title, stack, detail, date, link }) => (
-            <Project
-              title={title}
-              stack={stack}
-              detail={detail}
-              date={date}
-              link={link}
-            />
-          ))}
-
-          <Card colour="border border-indigo-500">
-            <h1 className="text-xl text-center font-semibold gradient-text">
-              And many more coming soon!
-            </h1>
-          </Card>
-        </div>
-      </div>
-    </section>
+    <>
+      {projects.map(({ title, stack, detail, date, link }) => (
+        <Project
+          title={title}
+          stack={stack}
+          detail={detail}
+          date={date}
+          link={link}
+        />
+      ))}
+    </>
   )
 }
