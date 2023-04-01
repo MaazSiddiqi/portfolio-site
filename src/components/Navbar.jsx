@@ -1,11 +1,11 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import Btn from "./Btn"
 import { motion, AnimatePresence } from "framer-motion"
 import NavSideMenu from "./NavSideMenu"
 
 const enterNav = {
   out: {
-    y: '-25%',
+    y: "-25%",
     opacity: 0,
   },
   in: {
@@ -14,7 +14,7 @@ const enterNav = {
     transition: {
       delay: 0.3,
       duration: 1,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 }
@@ -84,7 +84,7 @@ export default function Navbar({ mainText, menuItems, special }) {
               >
                 {item}
               </a>
-            )
+            ),
           )}
         </motion.span>
 
