@@ -27,8 +27,8 @@ export default function Experiences() {
         className={`${
           tab === name
             ? "bg-indigo-500 text-white"
-            : "bg-white text-gray-500 hover:bg-indigo-50"
-        } flex px-8 py-1 rounded-xl font-light drop-shadow-md hover:scale-105  transition-all duration-200`}
+            : "bg-white text-gray-500 hover:bg-slate-50 active:bg-indigo-50"
+        } flex px-8 py-1 rounded-xl font-light drop-shadow-md hover:scale-105 active:scale-95 active:drop-shadow-sm transition-all duration-200`}
         onClick={() => setTab(name)}
       >
         <div>
