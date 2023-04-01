@@ -1,25 +1,99 @@
-import Card from "./Card"
-export default function Project({ title, subtitle, stack, date, img, detail }) {
-  return (
-    <div className="flex flex-col items-center">
-      <Card grow img={img}>
-        <div className="space-y-4 max-w-4xl">
-          <div>
-            <div className="flex items-end space-x-2">
-              <h1 className="text-xl font-bold text-gray-700">{title}</h1>
-              <h2 className="text-l font-semibold text-gray-500">{subtitle}</h2>
-            </div>
-            <h2 className="italic font-normal">
-              Tech Stack:{" "}
-              <span className="sm:gradient-text text-fuchsia-600 font-light">
-                {stack}
-              </span>
-            </h2>
-            <h2 className="font-extralight">{date}</h2>
-          </div>
-          <p className="font-light">{detail}</p>
+import React, { useState } from "react"
+import WorkExperiences, { experiences } from "./Experiences"
+import ExtraCurriculars, { extraCurriculars } from "./ExtraCurriculars"
+import Projects, { projects } from "./Projects"
+
+// Typically would be retrived through db
+const subtitles = {
+  work: "Here is an overview of my work experience so far!",
+  extraCurriculars:
+    "Here is a summary of everything I've been involved in at Western University!",
+  projects:
+    "Here are some of the projects I've worked on over the years. More coming soon!",
+}
+
+const tabCounts = {
+  work: experiences.length,
+  extraCurriculars: extraCurriculars.length,
+  projects: projects.length,
+}
+
+export default function Experiences() {
+  const [tab, setTab] = useState("work")
+
+  const TabNavButton = ({ name, title }) => {
+    return (
+      <button
+        className={`${
+          tab === name
+            ? "bg-indigo-500 text-white"
+            : "bg-white text-gray-500 hover:bg-indigo-50"
+        } flex px-8 py-2 rounded-xl font-light drop-shadow-md hover:scale-105  transition-all duration-200`}
+        onClick={() => setTab(name)}
+      >
+        <div>
+          {title}{" "}
+          <span
+            className={`font-light text-xs self-end ${
+              tab !== name ? "text-slate-400" : "text-white"
+            }`}
+          >
+            {tabCounts[name]}
+          </span>
         </div>
-      </Card>
-    </div>
+      </button>
+    )
+  }
+
+  // Tab navigation for each panel: work, extraCurriculars, projects
+  const TabNavigation = () => {
+    return (
+      <div className="flex justify-center px-6 space-x-4 rounded-md w-full">
+        <TabNavButton name="work" title="Work" />
+        <TabNavButton name="extraCurriculars" title="Extra Curriculars" />
+        <TabNavButton name="projects" title="Projects" />
+      </div>
+    )
+  }
+
+  const Tab = ({ name }) => {
+    switch (name) {
+      case "work":
+        return WorkExperiences()
+      case "extraCurriculars":
+        return ExtraCurriculars()
+      case "projects":
+        return Projects()
+      default:
+        return WorkExperiences()
+    }
+  }
+
+  return (
+    <section className="bg-white">
+      <div
+        id="experiences"
+        className="flex flex-col items-center p-14 space-y-8 text-gray-500"
+      >
+        <div className="flex flex-col text-center space-y-4 w-full">
+          <h1 className="text-3xl text-center font-semibold text-gray-700 mb-6">
+            My Experience.
+          </h1>
+          <TabNavigation />
+          <p className="text-center">{subtitles[tab]}</p>
+          <p>
+            <span className="font-medium">My Tech Stack: </span>
+            <span className="sm:gradient-text text-indigo-500 italic font-medium">
+              Java, TypeScript, Python, C#, Unity, HTML, CSS, JavaScript,
+              ReactJS, NodeJS, ExpressJS
+            </span>
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <Tab name={tab} />
+        </div>
+      </div>
+    </section>
   )
 }
