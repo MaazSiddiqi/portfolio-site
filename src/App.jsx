@@ -20,7 +20,7 @@ function App() {
   }, [])
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       {loading ? (
         <LoadingSite />
       ) : (
