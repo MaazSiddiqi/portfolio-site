@@ -9,8 +9,8 @@ import MainHeroV2 from "../MainHeroV2"
 export default function Home() {
   return (
     <>
-      <MainHero />
-      {/* <MainHeroV2 /> */}
+      {/* <MainHero /> */}
+      <MainHeroV2 />
       <About />
       <Experience />
       <Contact />
