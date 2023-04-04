@@ -72,14 +72,14 @@ export default function Navbar({ mainText, menuItems, special }) {
                 href={menuItems[item]}
                 target="_blank"
                 rel="noreferrer"
-                key={Math.random(1000000, 100000000)}
+                key={Math.random()}
               >
                 <Btn text={item} />
               </a>
             ) : (
               <a
                 href={menuItems[item]}
-                key={Math.random(1000000, 100000000)}
+                key={Math.random()}
                 className="bg-white/60 rounded px-2 hover:border-b-4 hover:border-violet-600/50 active:border-0 active:shadow-inner transition-all duration-150"
               >
                 {item}

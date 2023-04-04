@@ -21,29 +21,28 @@ const tabCounts = {
 export default function Experiences() {
   const [tab, setTab] = useState("work")
 
-  const TabNavButton = ({ name, title }) => {
-    return (
-      <button
-        className={`${
-          tab === name
-            ? "bg-indigo-500 text-white font-semibold"
-            : "bg-white text-gray-500 hover:bg-slate-50 active:bg-indigo-50"
-        } flex px-8 py-1 rounded-xl font-light drop-shadow-md hover:scale-105 active:scale-95 active:drop-shadow-sm transition-all duration-200`}
-        onClick={() => setTab(name)}
-      >
-        <div>
-          {title}{" "}
-          <span
-            className={`font-light text-xs self-end ${
-              tab !== name ? "text-slate-400" : "text-white"
-            }`}
-          >
-            {tabCounts[name]}
-          </span>
-        </div>
-      </button>
-    )
-  }
+  const TabNavButton = ({ name, title }) => (
+    <button
+      className={`${
+        tab === name
+          ? "bg-indigo-500 text-white font-semibold"
+          : "bg-white text-gray-500 hover:bg-slate-50 active:bg-indigo-50"
+      } flex px-8 py-1 rounded-xl font-light drop-shadow-md hover:scale-105 active:scale-95 active:drop-shadow-sm transition-all duration-200`}
+      onClick={() => setTab(name)}
+      key={name + "button"}
+    >
+      <div>
+        {title}{" "}
+        <span
+          className={`font-light text-xs self-end ${
+            tab !== name ? "text-slate-400" : "text-white"
+          }`}
+        >
+          {tabCounts[name]}
+        </span>
+      </div>
+    </button>
+  )
 
   // Tab navigation for each panel: work, extraCurriculars, projects
   const TabNavigation = () => {

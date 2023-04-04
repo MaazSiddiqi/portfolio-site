@@ -1,7 +1,8 @@
 import { Text3D } from "@react-three/drei"
 import React from "react"
+import { Color } from "three"
 
-export default function TestText() {
+export default function TestText({ text }) {
   return (
     <>
       <Text3D
@@ -12,11 +13,10 @@ export default function TestText() {
         height={0.5}
         lineHeight={0.5}
         letterSpacing={-0.06}
-        size={1.5}
+        size={1.25}
         font="/DM Sans_Bold.json"
       >
-        Maaz.
-        <meshStandardMaterial />
+        {text}
       </Text3D>
     </>
   )
