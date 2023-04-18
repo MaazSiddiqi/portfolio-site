@@ -1,16 +1,15 @@
 import { Center, Float, OrbitControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
+import {
+  Bloom,
+  EffectComposer,
+  Noise,
+  Vignette,
+} from "@react-three/postprocessing"
 import React from "react"
 import Deadzone from "./three/Deadzone"
 import MainText from "./three/MainText"
 import Backdrop from "./three/PointsSpheres"
-import {
-  EffectComposer,
-  DepthOfField,
-  Bloom,
-  Noise,
-  Vignette,
-} from "@react-three/postprocessing"
 
 export default function MainHero() {
   return (
@@ -46,20 +45,14 @@ export default function MainHero() {
         </Center>
         <Backdrop />
         <EffectComposer>
-          {/* <DepthOfField
-            focusDistance={0}
-            focalLength={0.02}
-            bokehScale={1.5}
-            height={480}
-          /> */}
           <Bloom
             luminanceThreshold={0}
             luminanceSmoothing={1}
             height={150}
             opacity={0.2}
           />
-          {/* <Noise opacity={0.01} />
-          <Vignette eskil={false} offset={0.1} darkness={0.5} /> */}
+          <Noise opacity={0.01} />
+          <Vignette eskil={false} offset={0.1} darkness={0.3} />
         </EffectComposer>
       </Canvas>
       <Deadzone />
