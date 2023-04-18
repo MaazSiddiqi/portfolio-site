@@ -6,11 +6,10 @@ import Footer from "../Footer"
 import MainHero from "../MainHero"
 import MainHeroV2 from "../MainHeroV2"
 
-export default function Home() {
+export default function Home({ finishLoading }) {
   return (
     <>
-      {/* <MainHero /> */}
-      <MainHeroV2 />
+      <MainHeroV2 finishLoading={finishLoading} />
       <About />
       <Experience />
       <Contact />
