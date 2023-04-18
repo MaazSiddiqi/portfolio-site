@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion"
 import React, { useEffect, useState } from "react"
-import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
+import ResumePDF from "/Resume-public/Maaz Siddiqi.pdf"
 import Navbar from "./components/Navbar"
 import Home from "./components/Pages/Home"
 import LoadingSite from "./components/Pages/LoadingSite"
