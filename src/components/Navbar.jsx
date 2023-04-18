@@ -54,7 +54,7 @@ export default function Navbar({ mainText, menuItems, special }) {
         {/* Nav Main */}
         <a
           href="#top"
-          className="px-2 py-1 text-2xl font-mono bg-white/70 rounded-md border-b-2 border-violet-500 hover:scale-105 hover:shadow-lg hover:rounded-2xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200"
+          className="px-2 py-1 text-lg md:text-2xl font-mono bg-white/70 rounded-md border-b-2 border-violet-500 hover:scale-105 hover:shadow-lg hover:rounded-2xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200"
         >
           {mainText ? mainText : "Nav Main."}
         </a>
