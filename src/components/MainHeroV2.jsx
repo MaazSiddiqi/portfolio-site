@@ -4,6 +4,13 @@ import React from "react"
 import Deadzone from "./three/Deadzone"
 import MainText from "./three/MainText"
 import Backdrop from "./three/PointsSpheres"
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  Noise,
+  Vignette,
+} from "@react-three/postprocessing"
 
 export default function MainHero() {
   return (
@@ -29,8 +36,8 @@ export default function MainHero() {
           />
           <Float
             speed={0.8} // Animation speed, defaults to 1
-            rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
-            floatIntensity={0.05} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+            rotationIntensity={0.2} // XYZ rotation intensity, defaults to 1
+            floatIntensity={0.02} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
           >
             <mesh rotation={[0, -Math.PI / 24, 0]} position={[0, 0, -5]}>
               <MainText />
@@ -38,6 +45,17 @@ export default function MainHero() {
           </Float>
         </Center>
         <Backdrop />
+        {/* <EffectComposer>
+          <DepthOfField
+            focusDistance={0}
+            focalLength={0.02}
+            bokehScale={1.5}
+            height={480}
+          />
+          <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={300} />
+          <Noise opacity={0.01} />
+          <Vignette eskil={false} offset={0.1} darkness={0.5} />
+        </EffectComposer> */}
       </Canvas>
       <Deadzone />
     </div>
