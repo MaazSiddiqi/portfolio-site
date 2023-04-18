@@ -9,7 +9,7 @@ export default function Deadzone() {
         A Computer Science Student at Western University
       </h2>
       <div className="flex justify-between items-center w-full px-10 md:px-[4rem] lg:px-40 z-20">
-        <div className="flex space-x-2 scale-[1.3] text-slate-100">
+        <div className="flex space-x-2 scale-[1.3] text-slate-800 group-hover:text-slate-200">
           <a
             href="https://www.linkedin.com/in/maaz-siddiqi/"
             className="hover:text-white basic-focus-animation basic-active-animation transition-colors"
@@ -30,7 +30,7 @@ export default function Deadzone() {
           </a>
         </div>
         <a
-          className="text-blue-800 hover:drop-shadow-lg group-hover:text-slate-300 transition-colors duration-250"
+          className="text-blue-800 hover:drop-shadow-lg group-hover:text-slate-200 hover:text-white transition-colors duration-250"
           href="#about"
         >
           <svg
@@ -46,7 +46,7 @@ export default function Deadzone() {
             />
           </svg>
         </a>
-        <div className="flex space-x-2 scale-[1.3] text-slate-100 invisible">
+        <div className="flex space-x-2 scale-[1.3] text-slate-800 invisible">
           <a
             href="https://www.linkedin.com/in/maaz-siddiqi/"
             className="hover:text-white basic-focus-animation basic-active-animation transition-colors"
