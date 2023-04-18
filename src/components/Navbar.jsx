@@ -44,7 +44,7 @@ export default function Navbar({ mainText, menuItems, special }) {
       // variants={enterNav}
       // initial="out"
       // animate="in"
-      className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500  w-screen z-50"
+      className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500  w-screen z-50 group"
     >
       <motion.div
         layoutId="nav-main-button"
@@ -98,7 +98,7 @@ export default function Navbar({ mainText, menuItems, special }) {
           }}
           className={`md:hidden ${
             showSideMenu ? "hidden" : ""
-          } rounded-full drop-shadow-xl text-slate-300 hover:scale-105 hover:shadow-md hover:shadow-violet-600/50 hover:bg-white hover:text-gray-600 transition-all duration-150 p-1 active:shadow-inner active:bg-violet-50 active:scale-95 `}
+          } rounded-full drop-shadow-xl text-slate-300 group-hover:text-slate-500 hover:scale-105 hover:shadow-md hover:shadow-violet-600/50 hover:bg-white hover:text-gray-600 transition-all duration-150 p-1 active:shadow-inner active:bg-violet-50 active:scale-95 `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
