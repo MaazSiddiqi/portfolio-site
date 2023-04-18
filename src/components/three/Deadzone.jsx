@@ -15,7 +15,7 @@ export default function Deadzone() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="w-6 h-6 animate-bounce "
+          className="w-6 h-6 animate-bounce"
         >
           <path
             fillRule="evenodd"
