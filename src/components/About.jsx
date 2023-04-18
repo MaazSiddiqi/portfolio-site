@@ -11,10 +11,10 @@ export default function About() {
           <h1 className=" font-bold text-3xl text-slate-100">About Me.</h1>
           <div className="text-lg space-y-6 font-light">
             <p>
-              I'm a passionate self-taught developer who just started studying
-              at Western University in Fall 2021. I'm enrolled in a Business and
-              Computer Science double degree program, and its been a blast so
-              far!
+              I'm a passionate self-taught developer and started studying at
+              Western University in Fall 2021. I'm enrolled in Computer Science
+              and plan to minor in Software Engineering. I currently have a 3.9
+              GPA.
             </p>
             <p>
               Fun fact, I've actually moved around 10 times in my life already!
