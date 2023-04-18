@@ -44,7 +44,7 @@ export default function Navbar({ mainText, menuItems, special }) {
       // variants={enterNav}
       // initial="out"
       // animate="in"
-      className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500  w-screen z-50 group"
+      className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500 w-screen z-50 group"
     >
       <motion.div
         layoutId="nav-main-button"
