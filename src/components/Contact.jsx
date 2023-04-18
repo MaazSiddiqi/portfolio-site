@@ -1,8 +1,8 @@
 import React from "react"
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
+import Button from "./Btn"
 import ContactForm from "./ContactForm"
 import Socials from "./Socials"
-import Button from "./Btn"
-import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 import ResumePDF from "/Resume-public/Maaz Siddiqi.pdf"
 
 export default function Contact() {
