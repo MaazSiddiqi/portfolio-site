@@ -12,6 +12,7 @@ export default function MainHero() {
             enableZoom={false}
             autoRotate
             autoRotateSpeed={0.15}
+            enablePan={false}
             rotateSpeed={0.2}
             maxAzimuthAngle={Math.PI / 2}
           />
