@@ -1,4 +1,4 @@
-import { Center, OrbitControls, PointMaterial, Text3D } from "@react-three/drei"
+import { Center, OrbitControls, Text3D } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import React from "react"
 import PointsSpheres from "./three/PointsSpheres"
@@ -9,9 +9,9 @@ export default function MainHero() {
       <Canvas color="white">
         <Center>
           <OrbitControls
-            enableZoom={true}
+            enableZoom={false}
             autoRotate
-            autoRotateSpeed={0.2}
+            autoRotateSpeed={0.15}
             rotateSpeed={0.2}
             maxAzimuthAngle={Math.PI / 2}
           />
@@ -21,7 +21,7 @@ export default function MainHero() {
             position={[0, 5, 10]}
             intensity={0.7}
           />
-          <mesh rotation={[0, -Math.PI / 12, 0]}>
+          <mesh rotation={[0, -Math.PI / 24, 0]}>
             <Center>
               <mesh position={[0, 0, -1.25 / 8]}>
                 <Text3D
@@ -63,18 +63,6 @@ export default function MainHero() {
             </Center>
           </mesh>
         </Center>
-        {/* <points position={[0, 0, 0]} scale={50}>
-          <sphereGeometry args={[0.5, 32, 32]} />
-          <PointMaterial color="black" size={0.15} />
-        </points>
-        <points position={[0, 0, 0]} scale={50} rotation={[0, Math.PI / 3, 0]}>
-          <sphereGeometry args={[0.5, 32, 32]} />
-          <PointMaterial color="purple" size={0.1} />
-        </points>
-        <points position={[0, 0, 0]} scale={50} rotation={[0, Math.PI / 6, 0]}>
-          <sphereGeometry args={[0.5, 32, 32]} />
-          <PointMaterial color="#6b21a8" size={0.1} />
-        </points> */}
         <PointsSpheres />
       </Canvas>
     </div>
