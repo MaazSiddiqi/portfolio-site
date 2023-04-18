@@ -1,9 +1,9 @@
+import { AnimatePresence } from "framer-motion"
 import React, { useEffect, useState } from "react"
+import ResumePDF from "/Resume-public/Maaz Siddiqi.pdf"
 import Navbar from "./components/Navbar"
 import Home from "./components/Pages/Home"
 import LoadingSite from "./components/Pages/LoadingSite"
-import ResumePDF from "./Resume-public/Maaz-Siddiqi.pdf"
-import { AnimatePresence } from "framer-motion"
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -20,7 +20,28 @@ function App() {
   }, [])
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <>
+      {loading ? (
+        <LoadingSite />
+      ) : (
+        <Navbar
+          mainText="Maaz Siddiqi."
+          menuItems={{
+            Home: "#",
+            About: "#about",
+            Experience: "#experiences",
+            Contact: "#contact",
+            Resume: ResumePDF,
+          }}
+          special={["Resume"]}
+        />
+      )}
+      <Home finishLoading={() => {}} />
+    </>
+  )
+
+  return (
+    <AnimatePresence mode="wait">
       {loading ? (
         <LoadingSite />
       ) : (
@@ -37,7 +58,7 @@ function App() {
             special={["Resume"]}
           />
 
-          <Home />
+          <Home finishLoading={() => setLoading(false)} />
         </>
       )}
     </AnimatePresence>

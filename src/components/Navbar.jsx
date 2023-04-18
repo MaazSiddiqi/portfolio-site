@@ -44,7 +44,7 @@ export default function Navbar({ mainText, menuItems, special }) {
       // variants={enterNav}
       // initial="out"
       // animate="in"
-      className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500  w-screen z-50"
+      className="fixed flex backdrop-filter backdrop-blur-sm backdrop-opacity-100 backdrop bg-gradient-to-b py-6 px-0 hover:bg-white transition-colors duration-200 text-center text-gray-500 w-screen z-50 group"
     >
       <motion.div
         layoutId="nav-main-button"
@@ -54,7 +54,7 @@ export default function Navbar({ mainText, menuItems, special }) {
         {/* Nav Main */}
         <a
           href="#top"
-          className="px-2 py-1 text-2xl font-mono bg-white/70 rounded-md border-b-2 border-indigo-600 hover:scale-105 hover:shadow-lg hover:rounded-2xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200"
+          className="px-2 py-1 text-lg md:text-2xl font-mono bg-white/70 rounded-md border-b-2 border-violet-500 hover:scale-105 hover:shadow-lg hover:rounded-2xl active:scale-95 active:shadow-inner active:bg-gray-100 transition-all duration-200"
         >
           {mainText ? mainText : "Nav Main."}
         </a>
@@ -72,14 +72,14 @@ export default function Navbar({ mainText, menuItems, special }) {
                 href={menuItems[item]}
                 target="_blank"
                 rel="noreferrer"
-                key={Math.random(1000000, 100000000)}
+                key={Math.random()}
               >
                 <Btn text={item} />
               </a>
             ) : (
               <a
                 href={menuItems[item]}
-                key={Math.random(1000000, 100000000)}
+                key={Math.random()}
                 className="bg-white/60 rounded px-2 hover:border-b-4 hover:border-violet-600/50 active:border-0 active:shadow-inner transition-all duration-150"
               >
                 {item}
@@ -98,7 +98,7 @@ export default function Navbar({ mainText, menuItems, special }) {
           }}
           className={`md:hidden ${
             showSideMenu ? "hidden" : ""
-          } rounded-xl bg-indigo-600 text-white hover:scale-105 hover:shadow-md hover:shadow-violet-600/50 hover:bg-white hover:text-gray-600 transition-all duration-150 p-1 active:shadow-inner active:bg-violet-50 active:scale-95 `}
+          } rounded-full drop-shadow-xl text-slate-300 group-hover:text-slate-500 hover:scale-105 hover:shadow-md hover:shadow-violet-600/50 hover:bg-white hover:text-gray-600 transition-all duration-150 p-1 active:shadow-inner active:bg-violet-50 active:scale-95 `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

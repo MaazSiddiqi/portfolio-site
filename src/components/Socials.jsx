@@ -1,3 +1,4 @@
+import React from "react"
 import { IconContext } from "react-icons"
 
 export default function Socials({ href, Icon, suffix }) {

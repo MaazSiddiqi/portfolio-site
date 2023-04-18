@@ -21,34 +21,33 @@ const tabCounts = {
 export default function Experiences() {
   const [tab, setTab] = useState("work")
 
-  const TabNavButton = ({ name, title }) => {
-    return (
-      <button
-        className={`${
-          tab === name
-            ? "bg-indigo-500 text-white font-semibold"
-            : "bg-white text-gray-500 hover:bg-slate-50 active:bg-indigo-50"
-        } flex px-8 py-1 rounded-xl font-light drop-shadow-md hover:scale-105 active:scale-95 active:drop-shadow-sm transition-all duration-200`}
-        onClick={() => setTab(name)}
-      >
-        <div>
-          {title}{" "}
-          <span
-            className={`font-light text-xs self-end ${
-              tab !== name ? "text-slate-400" : "text-white"
-            }`}
-          >
-            {tabCounts[name]}
-          </span>
-        </div>
-      </button>
-    )
-  }
+  const TabNavButton = ({ name, title }) => (
+    <button
+      className={`${
+        tab === name
+          ? "bg-indigo-500 text-white font-semibold"
+          : "bg-white text-gray-500 hover:bg-slate-50 active:bg-indigo-50"
+      } flex px-8 py-1 rounded-xl font-light drop-shadow-md hover:scale-105 active:scale-95 active:drop-shadow-sm transition-all duration-200`}
+      onClick={() => setTab(name)}
+      key={name + "button"}
+    >
+      <div>
+        {title}{" "}
+        <span
+          className={`font-light text-xs self-end ${
+            tab !== name ? "text-slate-400" : "text-white"
+          }`}
+        >
+          {tabCounts[name]}
+        </span>
+      </div>
+    </button>
+  )
 
   // Tab navigation for each panel: work, extraCurriculars, projects
   const TabNavigation = () => {
     return (
-      <div className="flex justify-center px-6 space-x-4 rounded-md w-full">
+      <div className="flex flex-col md:flex-row justify-center px-6 space-y-3 md:space-y-0 md:space-x-4 rounded-md w-full">
         <TabNavButton name="work" title="Work" />
         <TabNavButton name="extraCurriculars" title="Extra Curriculars" />
         <TabNavButton name="projects" title="Projects" />
@@ -73,14 +72,12 @@ export default function Experiences() {
     <section className="bg-white">
       <div
         id="experiences"
-        className="flex flex-col items-center p-14 space-y-8 text-gray-500"
+        className="flex flex-col items-center px-8 py-16 md:p-16 space-y-8 text-gray-500"
       >
         <div className="flex flex-col text-center space-y-4 w-full">
           <h1 className="text-3xl text-center font-semibold text-gray-700 mb-6">
             My Experience.
           </h1>
-          <TabNavigation />
-          <p className="text-center">{subtitles[tab]}</p>
           <p>
             <span className="font-medium">My Tech Stack: </span>
             <span className="sm:gradient-text text-indigo-500 italic font-medium">
@@ -88,6 +85,8 @@ export default function Experiences() {
               ReactJS, NodeJS, ExpressJS
             </span>
           </p>
+          <TabNavigation />
+          {/* <p className="text-center">{subtitles[tab]}</p> */}
         </div>
 
         <div className="space-y-6">
