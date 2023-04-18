@@ -1,6 +1,5 @@
 import React from "react"
 import { motion } from "framer-motion"
-// import WaveSVG from "../../images/Wave1.svg"
 
 const animationDuration = 0.7
 
@@ -15,7 +14,7 @@ export default function LoadingSite() {
           ease: "easeIn",
         },
       }}
-      className="flex relative justify-center items-center w-screen h-screen overflow-x-hidden"
+      className="flex justify-center items-center bg-white w-screen h-screen overflow-x-hidden fixed top-0 z-30"
     >
       <div>
         <div className="relative">
@@ -32,7 +31,7 @@ export default function LoadingSite() {
                 yoyo: Infinity,
               },
             }}
-            className="p-6 bg-white rounded-full drop-shadow-lg z-[1]"
+            className="p-3 md:p-6 bg-white rounded-full drop-shadow-lg z-[1]"
           >
             <h1 className="px-2 py-1 text-lg md:text-5xl font-mono text-gray-500 text-center ">
               Maaz Siddiqi.
