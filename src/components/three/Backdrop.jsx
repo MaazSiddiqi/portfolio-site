@@ -2,7 +2,7 @@ import { useLoader } from "@react-three/fiber"
 import React, { useEffect, useRef } from "react"
 import { TextureLoader } from "three/src/loaders/TextureLoader"
 
-export default function Backdrop({ finishLoading }) {
+export default function Backdrop() {
   const bgMap = useLoader(TextureLoader, "dreamlike_sky_islands.jpeg")
   const bgSphere = useRef()
 
@@ -11,7 +11,7 @@ export default function Backdrop({ finishLoading }) {
   }, [])
 
   return (
-    <mesh rotation={[0, -Math.PI / 2, 0]} onAfterRender={finishLoading}>
+    <mesh rotation={[0, -Math.PI / 2, 0]}>
       <sphereGeometry args={[12, 32, 32]} ref={bgSphere} />
       <meshBasicMaterial map={bgMap} />
     </mesh>

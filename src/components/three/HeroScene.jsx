@@ -9,7 +9,7 @@ import React from "react"
 import Backdrop from "./Backdrop"
 import MainText from "./MainText"
 
-export default function HeroScene({ finishLoading }) {
+export default function HeroScene() {
   return (
     <>
       <Center>
@@ -36,7 +36,7 @@ export default function HeroScene({ finishLoading }) {
         </mesh>
         {/* </Float> */}
       </Center>
-      <Backdrop finishLoading={finishLoading} />
+      <Backdrop />
       {/* <EffectComposer>
         <Bloom
           luminanceThreshold={0}

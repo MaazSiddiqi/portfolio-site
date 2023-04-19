@@ -5,18 +5,11 @@ import HeroScene from "./three/HeroScene"
 import LoadingSite from "./Pages/LoadingSite"
 import { PerformanceMonitor } from "@react-three/drei"
 
-export default function MainHero({ finishLoading }) {
+export default function MainHero() {
   return (
     <div className="bg-white h-screen">
-      <Canvas
-        color="white"
-        camera={{ position: [0, 0, 10] }}
-        onLoad={() => {
-          console.log("Canvas loaded")
-          finishLoading()
-        }}
-      >
-        <HeroScene finishLoading={finishLoading} />
+      <Canvas color="white" camera={{ position: [0, 0, 10] }}>
+        <HeroScene />
       </Canvas>
       <Deadzone />
     </div>

@@ -36,7 +36,7 @@ function App() {
           special={["Resume"]}
         />
       )}
-      <Home finishLoading={() => {}} />
+      <Home />
     </>
   )
 
