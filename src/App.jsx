@@ -39,30 +39,6 @@ function App() {
       <Home />
     </>
   )
-
-  return (
-    <AnimatePresence mode="wait">
-      {loading ? (
-        <LoadingSite />
-      ) : (
-        <>
-          <Navbar
-            mainText="Maaz Siddiqi."
-            menuItems={{
-              Home: "#",
-              About: "#about",
-              Experience: "#experiences",
-              Contact: "#contact",
-              Resume: ResumePDF,
-            }}
-            special={["Resume"]}
-          />
-
-          <Home finishLoading={() => setLoading(false)} />
-        </>
-      )}
-    </AnimatePresence>
-  )
 }
 
 export default App
