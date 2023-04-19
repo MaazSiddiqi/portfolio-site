@@ -1,3 +1,5 @@
+import React from "react"
+
 export default function Footer() {
   return (
     <div className="flex flex-col justify-center items-center h-[25vh] bg-gradient-to-br from-indigo-600 via-purple-600 to-fuchsia-500 text-slate-50 p-6 space-y-3">
