@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md"
 export default function Deadzone() {
   return (
     <div className="w-screen h-1/5 absolute bottom-0 grid place-items-center group z-0">
-      <h2 className="font-semibold text-center w-full px-2 text-lg">
+      <h2 className="font-semibold text-center w-full px-2 text-base md:text-lg">
         A Computer Science Student at Western University
       </h2>
       <div className="flex justify-between items-center w-full px-10 md:px-[4rem] lg:px-40 z-20">
