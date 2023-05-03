@@ -1,43 +1,44 @@
-import React, { useEffect, useState } from "react"
-import Navbar from "./components/Navbar"
-import Home from "./components/Pages/Home"
-import LoadingSite from "./components/Pages/LoadingSite"
-import ResumePDF from "/Resume-public/Maaz Siddiqi.pdf"
+import React, { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/Pages/Home";
+import LoadingSite from "./components/Pages/LoadingSite";
+import ResumePDF from "/Resume-public/Maaz Siddiqi.pdf";
 
 function App() {
-  const [loading, setLoading] = useState(true)
+  const [ loading, setLoading ] = useState( true );
 
-  useEffect(() => {
-    const load = async (time) => {
-      await setTimeout(() => {
-        setLoading(false)
-      }, time)
-    }
+  useEffect( () => {
+    // artificial loading time
+    const load = async ( time ) => {
+      setTimeout( () => {
+        setLoading( false );
+      }, time );
+    };
 
     // load(0)
-    load(1250)
-  }, [])
+    load( 1250 );
+  }, [] );
 
   return (
     <>
-      {loading ? (
+      { loading ? (
         <LoadingSite />
       ) : (
         <Navbar
           mainText="Maaz Siddiqi."
-          menuItems={{
+          menuItems={ {
             Home: "#",
             About: "#about",
             Experience: "#experiences",
             Contact: "#contact",
             Resume: ResumePDF,
-          }}
-          special={["Resume"]}
+          } }
+          special={ [ "Resume" ] }
         />
-      )}
-      <Home />
+      ) }
+      <Home isLoaded={ !loading } />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,14 +1,41 @@
-import React from "react"
-import { FaLinkedinIn, FaGithub } from "react-icons/fa"
-import { MdEmail } from "react-icons/md"
+import React from "react";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { motion } from "framer-motion";
+
+const enterDeadzone = {
+  out: {
+    y: "25%",
+    opacity: 0,
+  },
+  in: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.3,
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
 
 export default function Deadzone() {
   return (
     <div className="w-screen h-1/5 absolute bottom-0 grid place-items-center group z-0">
-      <h2 className="font-semibold text-center w-full px-2 text-base md:text-lg">
+      <motion.h2
+        variants={enterDeadzone}
+        initial="out"
+        animate="in"
+        className="font-semibold text-center w-full px-2 text-base md:text-lg"
+      >
         A Computer Science Student at Western University
-      </h2>
-      <div className="flex justify-between items-center w-full px-10 md:px-[4rem] lg:px-40 z-20">
+      </motion.h2>
+      <motion.div
+        variants={enterDeadzone}
+        initial="out"
+        animate="in"
+        className="flex justify-between items-center w-full px-10 md:px-[4rem] lg:px-40 z-20"
+      >
         <div className="flex space-x-2 scale-105 md:scale-[1.3] text-slate-800 group-hover:text-slate-200 w-1/3">
           <a
             href="https://www.linkedin.com/in/maaz-siddiqi/"
@@ -29,7 +56,10 @@ export default function Deadzone() {
             <MdEmail />
           </a>
         </div>
-        <a
+        <motion.a
+          variants={enterDeadzone}
+          initial="out"
+          animate="in"
           className="w-1/3 grid place-items-center text-blue-800 hover:drop-shadow-lg group-hover:text-slate-200 hover:text-white transition-colors duration-250"
           href="#about"
         >
@@ -45,10 +75,10 @@ export default function Deadzone() {
               clipRule="evenodd"
             />
           </svg>
-        </a>
+        </motion.a>
         <div className="w-1/3"></div>
-      </div>
+      </motion.div>
       <div className="w-full h-full opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black/25 via-slate-500/25 to-transparent absolute top-0 transition-opacity duration-150 z-10"></div>
     </div>
-  )
+  );
 }
