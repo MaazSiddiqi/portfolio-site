@@ -1,28 +1,38 @@
-import React, { useState } from "react"
-import WorkExperiences, { experiences } from "./Experiences"
-import ExtraCurriculars, { extraCurriculars } from "./ExtraCurriculars"
-import Projects, { projects } from "./Projects"
-
-// Typically would be retrived through db
-const subtitles = {
-  work: "Here is an overview of my work experience so far!",
-  extraCurriculars:
-    "Here is a summary of everything I've been involved in at Western University!",
-  projects:
-    "Here are some of the projects I've worked on over the years. More coming soon!",
-}
+import { motion } from "framer-motion";
+import React, { useMemo, useState } from "react";
+import WorkExperiences, { experiences } from "./Experiences";
+import ExtraCurriculars, { extraCurriculars } from "./ExtraCurriculars";
+import { scrollAnimation } from "./Pages/Home";
+import Projects, { projects } from "./Projects";
 
 const tabCounts = {
   work: experiences.length,
   extraCurriculars: extraCurriculars.length,
   projects: projects.length,
-}
+};
 
 export default function Experiences() {
-  const [tab, setTab] = useState("work")
+  const [tab, setTab] = useState("work");
+
+  const tabs = useMemo(() => ({
+    work: WorkExperiences,
+    extraCurriculars: ExtraCurriculars,
+    projects: Projects,
+  }));
+
+  // Tab navigation for each panel: work, extraCurriculars, projects
+  const TabNavigation = () => {
+    return (
+      <motion.div className="flex flex-col md:flex-row justify-center px-6 space-y-3 md:space-y-0 md:space-x-4 rounded-md w-full">
+        <TabNavButton name="work" title="Work" />
+        <TabNavButton name="extraCurriculars" title="Extra Curriculars" />
+        <TabNavButton name="projects" title="Projects" />
+      </motion.div>
+    );
+  };
 
   const TabNavButton = ({ name, title }) => (
-    <button
+    <motion.button
       className={`${
         tab === name
           ? "bg-indigo-500 text-white font-semibold"
@@ -41,32 +51,10 @@ export default function Experiences() {
           {tabCounts[name]}
         </span>
       </div>
-    </button>
-  )
+    </motion.button>
+  );
 
-  // Tab navigation for each panel: work, extraCurriculars, projects
-  const TabNavigation = () => {
-    return (
-      <div className="flex flex-col md:flex-row justify-center px-6 space-y-3 md:space-y-0 md:space-x-4 rounded-md w-full">
-        <TabNavButton name="work" title="Work" />
-        <TabNavButton name="extraCurriculars" title="Extra Curriculars" />
-        <TabNavButton name="projects" title="Projects" />
-      </div>
-    )
-  }
-
-  const Tab = ({ name }) => {
-    switch (name) {
-      case "work":
-        return WorkExperiences()
-      case "extraCurriculars":
-        return ExtraCurriculars()
-      case "projects":
-        return Projects()
-      default:
-        return WorkExperiences()
-    }
-  }
+  const Tab = ({ name }) => tabs[name]();
 
   return (
     <section className="bg-white">
@@ -75,24 +63,32 @@ export default function Experiences() {
         className="flex flex-col items-center px-8 py-16 md:p-16 space-y-8 text-gray-500"
       >
         <div className="flex flex-col text-center space-y-4 w-full">
-          <h1 className="text-3xl text-center font-semibold text-gray-700 mb-6">
+          <motion.h1
+            initial={scrollAnimation.initial}
+            whileInView={scrollAnimation.whileInView}
+            viewport={{ once: true }}
+            className="text-3xl text-center font-semibold text-gray-700 mb-6"
+          >
             My Experience.
-          </h1>
-          <p>
+          </motion.h1>
+          <motion.p
+            initial={scrollAnimation.initial}
+            whileInView={scrollAnimation.whileInView}
+            viewport={{ once: true }}
+          >
             <span className="font-medium">My Tech Stack: </span>
             <span className="sm:gradient-text text-indigo-500 italic font-medium">
               Java, TypeScript, Python, C#, Unity, HTML, CSS, JavaScript,
               ReactJS, NodeJS, ExpressJS
             </span>
-          </p>
+          </motion.p>
           <TabNavigation />
-          {/* <p className="text-center">{subtitles[tab]}</p> */}
         </div>
 
-        <div className="space-y-6">
+        <motion.div className="space-y-6">
           <Tab name={tab} />
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }

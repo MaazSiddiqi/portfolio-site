@@ -1,5 +1,5 @@
-import React from "react"
-import Experience from "./Cards/Experience"
+import React from "react";
+import Experience from "./Cards/Experience";
 
 // Typically would be retrived through db
 export const experiences = [
@@ -21,7 +21,7 @@ export const experiences = [
     date: "June 2022 - Oct. 2022",
     link: "",
   },
-]
+];
 
 export default function Experiences() {
   return (
@@ -37,5 +37,5 @@ export default function Experiences() {
         />
       ))}
     </>
-  )
+  );
 }
