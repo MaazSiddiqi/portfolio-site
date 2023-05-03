@@ -60,7 +60,7 @@ export default function Navbar({ mainText, menuItems, special }) {
         </a>
 
         {/* Nav Full Menu*/}
-        <motion.span
+        <motion.div
           variants={enterNav}
           initial="out"
           animate="in"
@@ -87,7 +87,7 @@ export default function Navbar({ mainText, menuItems, special }) {
               </a>
             ),
           )}
-        </motion.span>
+        </motion.div>
 
         {/* Nav Condensed Sidemenu Button */}
         <motion.button
