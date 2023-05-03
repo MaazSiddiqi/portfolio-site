@@ -1,19 +1,24 @@
-import React from "react"
-import { FaGithub, FaLinkedinIn } from "react-icons/fa"
-import Button from "./Btn"
-import ContactForm from "./ContactForm"
-import Socials from "./Socials"
-import ResumePDF from "/Resume-public/Maaz Siddiqi.pdf"
+import { motion } from "framer-motion";
+import React from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import Button from "./Btn";
+import ContactForm from "./ContactForm";
+import { scrollAnimation } from "./Pages/Home";
+import Socials from "./Socials";
+import ResumePDF from "/Resume-public/Maaz Siddiqi.pdf";
 
 export default function Contact() {
   return (
-    <section
+    <motion.section
+      initial={ scrollAnimation.initial }
+      whileInView={ scrollAnimation.whileInView }
+      viewport={ { once: true } }
       id="contact"
       className="flex flex-col lg:flex-row min-h-fit m-8 md:m-16 md:mx-20 border"
     >
       <div className="flex flex-col lg:max-w-[50%] grow bg-gray-50 p-8 md:p-12 rounded-l-xl">
         <h1 className="text-3xl font-semibold text-gray-700 pb-8">
-          Like what you see?{" "}
+          Like what you see?{ " " }
           <span className="gradient-text whitespace-nowrap">Get in touch!</span>
         </h1>
 
@@ -26,25 +31,25 @@ export default function Contact() {
             <h2 className="font-light text-sm">Links</h2>
             <div className="flex flex-col space-y-3">
               <Socials
-                Icon={FaGithub}
+                Icon={ FaGithub }
                 href="https://github.com/MaazSiddiqi"
                 suffix="/ MaazSiddiqi"
               />
               <Socials
-                Icon={FaLinkedinIn}
+                Icon={ FaLinkedinIn }
                 href="https://www.linkedin.com/in/maaz-siddiqi/"
                 suffix="/ maaz-siddiqi"
               />
             </div>
           </div>
           <div className="pt-2 align-bottom">
-            <a href={ResumePDF} target="_blank" rel="noreferrer">
+            <a href={ ResumePDF } target="_blank" rel="noreferrer">
               <Button text="Resume" />
             </a>
           </div>
         </div>
       </div>
       <ContactForm />
-    </section>
-  )
+    </motion.section>
+  );
 }
