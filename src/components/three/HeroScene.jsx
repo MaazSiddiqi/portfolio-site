@@ -14,7 +14,7 @@ export default function HeroScene() {
     <>
       <Center>
         <OrbitControls
-          enableZoom={true}
+          enableZoom={false}
           maxDistance={12}
           minDistance={3}
           zoomSpeed={0.8}

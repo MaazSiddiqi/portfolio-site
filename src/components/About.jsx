@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import React from "react";
-import { scrollAnimation } from "./Pages/Home";
+import { motion } from "framer-motion"
+import React from "react"
+import { scrollAnimation } from "./Pages/Home"
 
 export default function About() {
   return (
@@ -42,5 +42,5 @@ export default function About() {
         </div>
       </motion.div>
     </section>
-  );
+  )
 }

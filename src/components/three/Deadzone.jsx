@@ -1,7 +1,7 @@
-import React from "react";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { motion } from "framer-motion";
+import React from "react"
+import { FaLinkedinIn, FaGithub } from "react-icons/fa"
+import { MdEmail } from "react-icons/md"
+import { motion } from "framer-motion"
 
 const enterDeadzone = {
   out: {
@@ -17,11 +17,11 @@ const enterDeadzone = {
       ease: "easeInOut",
     },
   },
-};
+}
 
 export default function Deadzone() {
   return (
-    <div className="w-screen h-1/5 absolute bottom-0 grid place-items-center group z-0">
+    <div className="w-full h-1/5 absolute bottom-0 grid place-items-center group z-0">
       <motion.h2
         variants={enterDeadzone}
         initial="out"
@@ -80,5 +80,5 @@ export default function Deadzone() {
       </motion.div>
       <div className="w-full h-full opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black/25 via-slate-500/25 to-transparent absolute top-0 transition-opacity duration-150 z-10"></div>
     </div>
-  );
+  )
 }
