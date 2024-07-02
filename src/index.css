@@ -1,15 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #282c33;
+  color: #abb2bf;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,7 +16,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-button {
+.fira-code {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.text-primary {
+  color: #c778dd;
+}
+
+.border-primary {
+  border-color: #c778dd;
+}
+
+.text-secondary {
+  color: #abb2bf;
+}
+
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -47,4 +65,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
