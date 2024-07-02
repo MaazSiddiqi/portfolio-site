@@ -32,7 +32,7 @@ export default function HeroScene() {
       floatIntensity={0.02} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
     > */}
         <mesh rotation={[0, -Math.PI / 24, 0]} position={[0, 0, -5]}>
-          <MainText main={"Maaz\nSiddiqi"} pretitle={"Hi! I'm"} />
+          <MainText main={"Maaz Siddiqi"} pretitle={""} />
         </mesh>
         {/* </Float> */}
       </Center>
