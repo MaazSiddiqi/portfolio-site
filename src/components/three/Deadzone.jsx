@@ -28,7 +28,8 @@ export default function Deadzone() {
         animate="in"
         className="font-semibold text-center w-full px-2 text-base md:text-lg"
       >
-        A Computer Science Student at Western University
+        a software developer passionate about building impactful solutions,
+        hackathons, and badminton 🏸
       </motion.h2>
       <motion.div
         variants={enterDeadzone}

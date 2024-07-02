@@ -9,7 +9,7 @@ export default function MainText({ main, pretitle }) {
           curveSegments={32}
           bevelEnabled
           bevelSize={0.04}
-          bevelThickness={0.1}
+          bevelThickness={0.05}
           height={0.5}
           lineHeight={0.7}
           letterSpacing={-0.06}
@@ -19,7 +19,7 @@ export default function MainText({ main, pretitle }) {
           {main}
           <meshStandardMaterial
             color="#8b5cf6"
-            roughness={0.6}
+            roughness={0.4}
             metalness={0.2}
           />
         </Text3D>

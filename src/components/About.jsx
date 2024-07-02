@@ -18,18 +18,25 @@ export default function About() {
           <h1 className=" font-bold text-3xl text-slate-100">About Me.</h1>
           <div className="text-lg space-y-6 font-light">
             <p>
-              I'm a passionate self-taught developer and started studying at
-              Western University in Fall 2021. I'm enrolled in Computer Science
-              and plan to minor in Software Engineering. I currently have a 3.9
-              GPA.
+              I'm a self-taught developer and currently studying Computer
+              Science at Western University.{" "}
             </p>
             <p>
-              Fun fact, I've actually moved around 10 times in my life already!
-              I was born in Karachi, Pakistan, and at the age of 7, my parents
-              took a leap of faith to bring my siblings to Canada. We've had to
-              move around numerous times since then, but each experience was
-              unforgettable! I've met all kinds of people, picking up a variety
-              of skills in the process.
+              Professionally, I work as an Amplify Developer at RBC, where
+              I&apos;m developing solutions to streamline HR processes for
+              90,000 employees using technologies like ReactJS, NextJS, and
+              Kubernetes.
+            </p>
+            <p>
+              In leadership roles, I co-chaired Hack Western, orchestrating one
+              of Canada&apos;s largest hackathons, and was a Tech Lead at the
+              Western Developers Society, supervising development projects and
+              conducting workshops.
+            </p>
+            <p>
+              Born in Karachi, Pakistan, and having moved around 10 times,
+              I&apos;ve met tons of people and gained diverse experiences and
+              skills that have shaped my journey.
             </p>
             <p className="font-light">
               <span className="!text-white mb-2 font-semibold text-transparent">
