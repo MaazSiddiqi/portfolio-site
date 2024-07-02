@@ -5,6 +5,30 @@ import Project from "./Cards/Project"
 // Typically would be retrived through db
 export const projects = [
   {
+    title: "Zlang Compiler",
+    stack: "C++, LLVM",
+    detail:
+      "A custom programming language developed as an exploratory project around programming language development. This project aims to implement a complete language utilizing LLVM as a backend.",
+    date: "Sept. 2022",
+    link: "https://github.com/MaazSiddiqi?tab=repositories",
+  },
+  {
+    title: "Western Rank",
+    stack: "Python, Numpy",
+    detail:
+      "A cross-functional team of four to build Western Rank, the first course review platform for Western University, using ReactJS, NextJS, Typescript, TailwindCSS, Prisma, and PostgreSQL. The platform attracted over 10,000 visitors within the first 24 hours and garnered 470+ reviews. I developed the course rankings algorithm, authentication, and review system, and served as the lead code reviewer.",
+    date: "Sept. 2022",
+    link: "https://github.com/MaazSiddiqi?tab=repositories",
+  },
+  {
+    title: "MNIST Classifier from Scratch",
+    stack: "Python, Numpy",
+    detail:
+      "I developed a multi-layer, densely connected feed-forward neural network from scratch to classify handwritten images of numbers in the MNIST dataset. Using Python and Numpy for matrix operations, I trained the model on 60,000 images, achieving a record accuracy of 97% by employing Xavier Initialization and Stochastic Gradient Descent techniques.",
+    date: "Jun. 2023",
+    link: "https://github.com/MaazSiddiqi?tab=repositories",
+  },
+  {
     title: "EYES.py (Hack the North 2022)",
     stack: "Python, Adhawk SD Kit",
     detail:
