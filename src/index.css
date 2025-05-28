@@ -23,7 +23,7 @@
   font-style: normal;
 }
 
-.text-primary {
+/* .text-primary {
   color: #c778dd;
 }
 
@@ -34,6 +34,10 @@
 .text-secondary {
   color: #abb2bf;
 }
+
+.border-primary {
+  border-color: #abb2bf;
+} */
 
 /* button {
   border-radius: 8px;
