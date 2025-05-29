@@ -2,7 +2,6 @@ import { motion, type Variants } from "motion/react"
 import CustomCursor from "./components/CustomCursor"
 
 import "./App.css"
-import { useCursor } from "./hooks/useCursor"
 
 const heroVariants = {
   hidden: { opacity: 0, y: -10 },
@@ -28,8 +27,6 @@ const heroTextVariants = {
 } as const satisfies Variants
 
 function App() {
-  const { setStatus } = useCursor()
-
   return (
     <main className="flex flex-col justify-center h-screen w-screen p-[15%]">
       <CustomCursor />
@@ -47,8 +44,6 @@ function App() {
         <motion.h1
           variants={heroTextVariants}
           className="text-3xl leading-title"
-          onMouseEnter={() => setStatus("hover")}
-          onMouseLeave={() => setStatus("default")}
         >
           Hey, I&apos;m <span className="text-light">Maaz.</span>
         </motion.h1>
