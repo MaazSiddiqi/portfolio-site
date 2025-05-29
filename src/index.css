@@ -35,6 +35,12 @@
   body {
     @apply bg-midnight text-dim font-brandon-grotesque;
   }
+
+  @media (min-width: 768px) {
+    * {
+      cursor: none;
+    }
+  }
 }
 
 @layer components {

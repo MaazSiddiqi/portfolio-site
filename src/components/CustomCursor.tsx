@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
 
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   const cursorX = useMotionValue(0)
   const cursorY = useMotionValue(0)
@@ -21,11 +22,24 @@ export default function CustomCursor() {
   const springY = useSpring(cursorY, springConfig)
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+
+    return () => {
+      window.removeEventListener("resize", checkMobile)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return
+
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e
-
       if (!isVisible) setIsVisible(true)
-
       cursorX.set(clientX - 16)
       cursorY.set(clientY - 16)
     }
@@ -35,14 +49,13 @@ export default function CustomCursor() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cursorX, cursorY])
+  }, [cursorX, cursorY, isVisible, isMobile])
 
-  if (!isVisible) return null
+  if (!isVisible || isMobile) return null
 
   return (
     <motion.div
-      className="w-8 h-8 fixed top-0 left-0 pointer-events-none z-50 mix-blend-normal"
+      className="w-8 h-8 fixed top-0 left-0 z-50 mix-blend-normal"
       transition={{
         duration: 1,
         ease: "easeInOut",
@@ -58,7 +71,7 @@ export default function CustomCursor() {
         }}
       >
         <motion.div
-          className="w-full h-full border-[0.5px] border-light bg-midnight rounded-full relative"
+          className="w-full h-full border-[0.5px] border-light bg-midnight rounded-full relative pointer-events-none"
           animate={{
             rotate: 360,
           }}

@@ -9,10 +9,10 @@ const heroVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.75,
+      duration: 1,
       ease: "easeOut",
       staggerChildren: 0.5,
-      delayChildren: 1.5,
+      delayChildren: 2,
     },
   },
 } as const satisfies Variants
@@ -28,34 +28,18 @@ const heroTextVariants = {
 
 function App() {
   return (
-    <main className="flex flex-col justify-center h-screen p-72">
+    <main className="flex flex-col justify-center h-screen w-screen p-[15%]">
       <CustomCursor />
-      {/* <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-midnight z-10"
-        initial={{ x: "0" }}
-        animate={{ x: "100%" }}
-        transition={{ duration: 2.5, ease: [0.76, 0, 0.24, 1] }}
-      /> */}
-      {/* <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-light"
-        initial={{ x: "-100%" }}
-        animate={{ x: "100%" }}
-        transition={{ duration: 2, ease: [0.76, 0, 0.24, 1] }}
-      /> */}
-      {/* <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-[url('/images/name-lg.png')] bg-cover bg-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: [0.76, 0, 0.24, 1] }}
-      /> */}
-      <motion.img
-        src="/images/name.png"
-        alt="name"
-        className="absolute top-0 left-[-10%] scale-[1.35] object-cover"
-        initial={{ scale: 0.85, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 4, ease: [0.76, 0, 0.24, 1], delay: 0 }}
-      />
+      <div className="absolute grid place-items-center top-[50%] left-[50%] w-screen h-screen overflow-hidden -translate-x-1/2 -translate-y-1/2 object-cover -z-10 pointer-events-none">
+        <motion.img
+          src="/images/name.png"
+          alt="name"
+          className="relative top-0 left-[-10%] scale-[1.35] object-cover"
+          initial={{ scale: 0.85, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 4.5, ease: [0.76, 0, 0.24, 1], delay: 0 }}
+        />
+      </div>
       <motion.div variants={heroVariants} initial="hidden" animate="visible">
         <motion.h1
           variants={heroTextVariants}
