@@ -2,6 +2,7 @@ import { motion, type Variants } from "motion/react"
 import CustomCursor from "./components/CustomCursor"
 
 import "./App.css"
+import { useCursor } from "./hooks/useCursor"
 
 const heroVariants = {
   hidden: { opacity: 0, y: -10 },
@@ -27,6 +28,8 @@ const heroTextVariants = {
 } as const satisfies Variants
 
 function App() {
+  const { setStatus } = useCursor()
+
   return (
     <main className="flex flex-col justify-center h-screen w-screen p-[15%]">
       <CustomCursor />
@@ -34,16 +37,18 @@ function App() {
         <motion.img
           src="/images/name.png"
           alt="name"
-          className="relative top-0 left-[-10%] scale-[1.35] object-cover"
+          className="relative top-0 left-[-10%] scale-[1.25] object-cover"
           initial={{ scale: 0.85, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 4.5, ease: [0.76, 0, 0.24, 1], delay: 0 }}
+          transition={{ duration: 3.5, ease: [0.76, 0, 0.24, 1], delay: 0 }}
         />
       </div>
       <motion.div variants={heroVariants} initial="hidden" animate="visible">
         <motion.h1
           variants={heroTextVariants}
           className="text-3xl leading-title"
+          onMouseEnter={() => setStatus("hover")}
+          onMouseLeave={() => setStatus("default")}
         >
           Hey, I&apos;m <span className="text-light">Maaz.</span>
         </motion.h1>
