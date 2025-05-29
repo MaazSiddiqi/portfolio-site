@@ -1,9 +1,4 @@
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  type SpringOptions,
-} from "motion/react"
+import { motion, useMotionValue } from "motion/react"
 import { useEffect, useState } from "react"
 import { useCursor } from "../hooks/useCursor"
 import DefaultCursor from "./cursors/DefaultCursor"
@@ -16,14 +11,6 @@ export default function CustomCursor() {
 
   const cursorX = useMotionValue(0)
   const cursorY = useMotionValue(0)
-
-  const springConfig = {
-    damping: 30,
-    stiffness: 200,
-    mass: 0.5,
-  } satisfies SpringOptions
-  const springX = useSpring(cursorX, springConfig)
-  const springY = useSpring(cursorY, springConfig)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -68,12 +55,7 @@ export default function CustomCursor() {
       {status === "hover" ? (
         <HoverCursor cursorX={cursorX} cursorY={cursorY} />
       ) : (
-        <DefaultCursor
-          cursorX={cursorX}
-          cursorY={cursorY}
-          springX={springX}
-          springY={springY}
-        />
+        <DefaultCursor cursorX={cursorX} cursorY={cursorY} />
       )}
     </motion.div>
   )
