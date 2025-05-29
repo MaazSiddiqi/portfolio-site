@@ -1,4 +1,5 @@
 import { motion, type Variants } from "motion/react"
+import CustomCursor from "./components/CustomCursor"
 
 import "./App.css"
 
@@ -28,6 +29,7 @@ const heroTextVariants = {
 function App() {
   return (
     <main className="flex flex-col justify-center h-screen p-72">
+      <CustomCursor />
       {/* <motion.div
         className="absolute top-0 left-0 w-full h-full bg-midnight z-10"
         initial={{ x: "0" }}
