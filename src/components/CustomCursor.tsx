@@ -46,7 +46,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="w-8 h-8 fixed top-0 left-0 z-50 mix-blend-normal"
+      className="w-[34px] h-[34px] fixed top-0 left-0 z-50 mix-blend-normal"
       transition={{
         duration: 1,
         ease: "easeInOut",

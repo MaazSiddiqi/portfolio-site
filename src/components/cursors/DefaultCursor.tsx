@@ -5,7 +5,6 @@ import {
   type MotionValue,
   type SpringOptions,
 } from "motion/react"
-import { useState } from "react"
 
 interface DefaultCursorProps {
   cursorX: MotionValue<number>
@@ -18,21 +17,17 @@ export default function DefaultCursor({
 }: DefaultCursorProps) {
   const shouldReduceMotion = useReducedMotion()
 
-  const [damping, setDamping] = useState(200)
-  const [stiffness, setStiffness] = useState(4500)
-  const [mass, setMass] = useState(1)
-
   const springConfig = {
-    damping: damping || 200,
-    stiffness: stiffness || 4500,
-    mass: mass || 1,
+    damping: 225,
+    stiffness: 3200,
+    mass: 1.2,
   } satisfies SpringOptions
   const springX = useSpring(cursorX, springConfig)
   const springY = useSpring(cursorY, springConfig)
 
   return (
     <>
-      <div className="fixed top-11/12 left-1/2 -translate-x-1/2 flex gap-2 z-20 text-light text-sm">
+      {/* <div className="fixed top-11/12 left-1/2 -translate-x-1/2 flex gap-2 z-20 text-light text-sm">
         <div className="flex items-center gap-2">
           <label>Damping</label>
           <input
@@ -63,7 +58,7 @@ export default function DefaultCursor({
             step={0.1}
           />
         </div>
-      </div>
+      </div> */}
       <motion.div
         className="w-full h-full pointer-events-none"
         initial={{ opacity: 0 }}
@@ -92,7 +87,7 @@ export default function DefaultCursor({
         </motion.div>
       </motion.div>
       <motion.div
-        className="w-1 h-1 bg-light rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="w-1.5 h-1.5 bg-light rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         style={{
           x: cursorX,
           y: cursorY,
