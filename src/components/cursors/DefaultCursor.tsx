@@ -69,7 +69,7 @@ export default function DefaultCursor({
         }}
       >
         <motion.div
-          className="w-full h-full border-[0.5px] border-light bg-midnight rounded-full relative pointer-events-none"
+          className="w-full h-full border-[0.5px] border-light rounded-full relative pointer-events-none"
           animate={{
             rotate: 360,
           }}
