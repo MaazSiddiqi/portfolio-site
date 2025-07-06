@@ -1,4 +1,4 @@
-import { motion, useMotionValue } from "motion/react"
+import { AnimatePresence, motion, useMotionValue } from "motion/react"
 import { useEffect, useState } from "react"
 import { useCursor } from "../hooks/useCursor"
 import DefaultCursor from "./cursors/DefaultCursor"
@@ -46,17 +46,19 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="w-[34px] h-[34px] fixed top-0 left-0 z-50 mix-blend-normal"
+      className="w-[34px] h-[34px] fixed top-0 left-0 z-50 mix-blend-normal pointer-events-none"
       transition={{
         duration: 1,
         ease: "easeInOut",
       }}
     >
-      {status === "hover" ? (
-        <HoverCursor cursorX={cursorX} cursorY={cursorY} />
-      ) : (
-        <DefaultCursor cursorX={cursorX} cursorY={cursorY} />
-      )}
+      <AnimatePresence mode="wait">
+        {status === "hover" ? (
+          <HoverCursor cursorX={cursorX} cursorY={cursorY} />
+        ) : (
+          <DefaultCursor cursorX={cursorX} cursorY={cursorY} />
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }

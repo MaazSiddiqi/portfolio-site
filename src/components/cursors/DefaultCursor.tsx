@@ -60,7 +60,7 @@ export default function DefaultCursor({
         </div>
       </div> */}
       <motion.div
-        className="w-full h-full pointer-events-none"
+        className="w-full h-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -69,7 +69,7 @@ export default function DefaultCursor({
         }}
       >
         <motion.div
-          className="w-full h-full border-[0.5px] border-light rounded-full relative pointer-events-none"
+          className="w-full h-full border-[0.5px] border-light rounded-full relative"
           animate={{
             rotate: 360,
           }}

@@ -44,8 +44,12 @@
 }
 
 @layer components {
+  .title {
+    @apply text-3xl leading-title;
+  }
+
   .label {
-    @apply uppercase text-xs text-neutral-400 tracking-[0.16em];
+    @apply uppercase text-xs text-dim tracking-[0.18em];
   }
 
   .text-accent {

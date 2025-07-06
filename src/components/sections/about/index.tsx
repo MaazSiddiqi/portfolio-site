@@ -27,7 +27,7 @@ const ABOUT_INFO = [
 export function About() {
   return (
     <div className="relative flex items-center justify-center h-screen w-screen bg-transparent overflow-hidden">
-      <div className="relative z-10 flex flex-row gap-16 items-center bg-transparent p-8 rounded-lg">
+      <div className="relative z-10 flex flex-row gap-24 items-center bg-transparent p-8 rounded-lg">
         {/* Image section */}
         <img
           src="/images/pfp.jpg"

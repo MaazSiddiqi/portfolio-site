@@ -8,7 +8,7 @@ interface HoverCursorProps {
 export default function HoverCursor({ cursorX, cursorY }: HoverCursorProps) {
   return (
     <motion.div
-      className="w-6 h-[1px] bg-light absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      className="w-1.5 h-1.5 border-[1px] border-light bg-midnight rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       style={{
         x: cursorX,
         y: cursorY,
