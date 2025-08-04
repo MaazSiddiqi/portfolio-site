@@ -1,6 +1,6 @@
-import { AnimatePresence, motion, useInView } from "motion/react"
-import { useEffect, useRef, useState } from "react"
-import CursorHover from "../../CursorHover"
+import { AnimatePresence, motion, useInView } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import CursorHover from "../../CursorHover";
 
 const socials = {
   linkedIn: {
@@ -23,9 +23,9 @@ const socials = {
     icon: "/icons/mail.svg",
     label: "maazali22@gmail.com",
   },
-} as const
+} as const;
 
-const lookingFor = ["idea", "adventure", "hobby", "friend"] as const
+const lookingFor = ["idea", "adventure", "hobby", "friend"] as const;
 
 const links = [
   {
@@ -44,22 +44,22 @@ const links = [
     href: "#resume",
     label: "Resume",
   },
-] as const
+] as const;
 
-const LOOKING_FOR_DELAY = 2500
+const LOOKING_FOR_DELAY = 2500;
 
 export default function Footer() {
-  const [lookingIdx, setLookingIdx] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { amount: 0.33, once: true })
+  const [lookingIdx, setLookingIdx] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { amount: 0.33, once: true });
 
   useEffect(() => {
-    if (!inView) return
+    if (!inView) return;
     const interval = setInterval(() => {
-      setLookingIdx((prev) => (prev + 1) % lookingFor.length)
-    }, LOOKING_FOR_DELAY)
-    return () => clearInterval(interval)
-  }, [inView])
+      setLookingIdx((prev) => (prev + 1) % lookingFor.length);
+    }, LOOKING_FOR_DELAY);
+    return () => clearInterval(interval);
+  }, [inView]);
 
   return (
     <AnimatePresence mode="wait">
@@ -165,5 +165,5 @@ export default function Footer() {
         )}
       </motion.div>
     </AnimatePresence>
-  )
+  );
 }
