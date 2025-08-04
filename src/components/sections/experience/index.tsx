@@ -1,5 +1,5 @@
-import { AnimatePresence, motion, useInView } from "motion/react"
-import { useRef } from "react"
+import { AnimatePresence, motion, useInView } from "motion/react";
+import { useRef } from "react";
 
 const EXPERIENCE = [
   {
@@ -32,15 +32,15 @@ const EXPERIENCE = [
     title: "Software Engineering Intern",
     date: "JUL 2022 - SEP 2022",
   },
-] as const
+] as const;
 
 export default function Experience() {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { amount: 0.33, once: true })
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { amount: 0.33, once: true });
 
   return (
     <motion.div
-      className="grid place-items-center w-screen h-screen p-[15%] relative"
+      className="grid place-items-center w-screen h-screen p-[15%] relative overflow-hidden"
       ref={ref}
     >
       <AnimatePresence mode="wait">
@@ -60,11 +60,11 @@ export default function Experience() {
           {EXPERIENCE.map((exp) => (
             <motion.div
               key={exp.company + exp.date}
-              className="flex justify-between items-center"
+              className="flex flex-col lg:flex-row justify-between items-start lg:items-center"
             >
               <div className="flex gap-1 items-end">
-                <span className="text-accent">{exp.company}</span>
-                <span className="text-dim">{exp.title}</span>
+                <span className="text-accent text-nowrap">{exp.company}</span>
+                <span className="text-dim text-nowrap">{exp.title}</span>
               </div>
               <div className="label">{exp.date}</div>
             </motion.div>
@@ -72,5 +72,5 @@ export default function Experience() {
         </motion.div>
       </AnimatePresence>
     </motion.div>
-  )
+  );
 }
