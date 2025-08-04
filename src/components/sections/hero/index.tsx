@@ -1,4 +1,4 @@
-import { motion, type Variants } from "motion/react"
+import { AnimatePresence, motion, type Variants } from "motion/react"
 
 const heroVariants = {
   hidden: { opacity: 0, y: -10 },
@@ -25,7 +25,8 @@ const heroTextVariants = {
 export default function Hero() {
   return (
     <div className="flex flex-col justify-center h-screen w-screen p-[15%]">
-      {/* <div className="absolute grid place-items-center top-[50%] left-[50%] w-screen h-screen overflow-clip -translate-x-1/2 -translate-y-1/2 object-cover -z-10">
+      <AnimatePresence mode="wait">
+        {/* <div className="absolute grid place-items-center top-[50%] left-[50%] w-screen h-screen overflow-clip -translate-x-1/2 -translate-y-1/2 object-cover -z-10">
         <motion.img
           src="/images/name.svg"
           alt="name"
@@ -35,19 +36,20 @@ export default function Hero() {
           transition={{ duration: 3.5, ease: [0.76, 0, 0.24, 1] }}
         />
       </div> */}
-      <motion.div variants={heroVariants} initial="hidden" animate="visible">
-        <motion.h1 variants={heroTextVariants} className="title">
-          Hey, I&apos;m <span className="text-light">Maaz.</span>
-        </motion.h1>
-        <motion.h1 variants={heroTextVariants} className="title">
-          I&apos;m a <span className="text-light">software engineer</span>{" "}
-          building systems <br /> for the future.
-        </motion.h1>
-        <motion.h2 variants={heroTextVariants} className="mt-4">
-          Currently a software engineering intern at{" "}
-          <span className="text-light">Amazon Web Services</span>
-        </motion.h2>
-      </motion.div>
+        <motion.div variants={heroVariants} initial="hidden" animate="visible">
+          <motion.h1 variants={heroTextVariants} className="title">
+            Hey, I&apos;m <span className="text-light">Maaz.</span>
+          </motion.h1>
+          <motion.h1 variants={heroTextVariants} className="title">
+            I&apos;m a <span className="text-light">software engineer</span>{" "}
+            building systems <br /> for the future.
+          </motion.h1>
+          <motion.h2 variants={heroTextVariants} className="mt-4">
+            Currently a software engineering intern at{" "}
+            <span className="text-light">Amazon Web Services</span>
+          </motion.h2>
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 }

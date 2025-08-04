@@ -74,7 +74,7 @@ export default function Footer() {
                 <motion.img
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 0.05, scale: 1 }}
-                  transition={{ duration: 3.5, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 2, ease: [0.65, 0, 0.35, 1] }}
                   viewport={{ once: true, amount: 0.8 }}
                   src="/images/name.svg"
                   alt="name"
@@ -88,8 +88,8 @@ export default function Footer() {
               animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.8 }}
               transition={{
-                duration: 2.5,
-                ease: [0.16, 1, 0.3, 1],
+                duration: 1.5,
+                ease: [0.65, 0, 0.35, 1],
                 delay: 0.5,
               }}
             >
@@ -131,9 +131,9 @@ export default function Footer() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 2.5,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: 0.5,
+                  duration: 1.5,
+                  ease: [0.65, 0, 0.35, 1],
+                  delay: 0.7,
                 }}
                 viewport={{ once: true, amount: 0.8 }}
               >

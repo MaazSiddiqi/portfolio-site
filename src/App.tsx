@@ -2,6 +2,7 @@ import CustomCursor from "./components/CustomCursor"
 
 import "./App.css"
 import { About } from "./components/sections/about"
+import Experience from "./components/sections/experience"
 import Footer from "./components/sections/footer"
 import Hero from "./components/sections/hero"
 
@@ -11,6 +12,7 @@ function App() {
       <CustomCursor />
       <Hero />
       <About />
+      <Experience />
       <Footer />
     </main>
   )
