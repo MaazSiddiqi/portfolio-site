@@ -36,10 +36,10 @@ const links = [
     href: "#experience",
     label: "Experience",
   },
-  {
-    href: "#journey",
-    label: "Journey",
-  },
+  // {
+  //   href: "#journey",
+  //   label: "Journey",
+  // },
   {
     href: "/Maaz Siddiqi.pdf",
     label: "Resume",

@@ -40,7 +40,7 @@ export default function Experience() {
 
   return (
     <motion.div
-      className="grid place-items-center w-screen h-screen p-[15%] relative overflow-hidden"
+      className="grid place-items-center w-screen h-screen p-[15%] relative overflow-hidden z-10"
       ref={ref}
       id="experience"
     >

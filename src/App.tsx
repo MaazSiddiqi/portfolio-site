@@ -9,24 +9,24 @@ import Hero from "./components/sections/hero"
 
 function App() {
   const { scrollYProgress } = useScroll()
-  const offset = useTransform(scrollYProgress, [0, 1], [0, -850])
+  const offset = useTransform(scrollYProgress, [0, 1], [0, -1350])
 
   return (
     <main className="flex flex-col justify-center min-h-screen w-screen">
       <CustomCursor />
-      {/* <motion.div
+      <motion.div
         className="fixed top-0 -z-20"
         style={{
           top: offset,
         }}
-      > */}
-      <Hero />
-      {/* </motion.div> */}
-      {/* <div className="mt-[100vh] bg-midnight"> */}
-      <About />
-      <Experience />
-      <Footer />
-      {/* </div> */}
+      >
+        <Hero />
+      </motion.div>
+      <div className="mt-[100vh] bg-midnight">
+        <About />
+        <Experience />
+        <Footer />
+      </div>
     </main>
   )
 }
