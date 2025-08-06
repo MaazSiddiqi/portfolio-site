@@ -41,7 +41,7 @@ const links = [
     label: "Journey",
   },
   {
-    href: "#resume",
+    href: "/Maaz Siddiqi.pdf",
     label: "Resume",
   },
 ] as const

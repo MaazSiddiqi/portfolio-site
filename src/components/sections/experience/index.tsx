@@ -1,5 +1,5 @@
-import { AnimatePresence, motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { AnimatePresence, motion, useInView } from "motion/react"
+import { useRef } from "react"
 
 const EXPERIENCE = [
   {
@@ -32,16 +32,17 @@ const EXPERIENCE = [
     title: "Software Engineering Intern",
     date: "JUL 2022 - SEP 2022",
   },
-] as const;
+] as const
 
 export default function Experience() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: 0.33, once: true });
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { amount: 0.33, once: true })
 
   return (
     <motion.div
       className="grid place-items-center w-screen h-screen p-[15%] relative overflow-hidden"
       ref={ref}
+      id="experience"
     >
       <AnimatePresence mode="wait">
         {inView && (
@@ -72,5 +73,5 @@ export default function Experience() {
         </motion.div>
       </AnimatePresence>
     </motion.div>
-  );
+  )
 }

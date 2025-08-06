@@ -26,16 +26,16 @@ export default function Hero() {
   return (
     <div className="flex flex-col justify-center h-screen w-screen p-[15%]">
       <AnimatePresence mode="wait">
-        {/* <div className="absolute grid place-items-center top-[50%] left-[50%] w-screen h-screen overflow-clip -translate-x-1/2 -translate-y-1/2 object-cover -z-10">
-        <motion.img
-          src="/images/name.svg"
-          alt="name"
-          className="relative top-1/2 left-[calc(50%-10%)] -translate-y-1/2 -translate-x-1/2 scale-[1.15] object-cover"
-          initial={{ scale: 0.85, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.05 }}
-          transition={{ duration: 3.5, ease: [0.76, 0, 0.24, 1] }}
-        />
-      </div> */}
+        <div className="absolute hidden lg:grid place-items-center top-[50%] left-[50%] w-screen h-screen overflow-clip -translate-x-1/2 -translate-y-1/2 object-cover -z-10">
+          <motion.img
+            src="/images/name.svg"
+            alt="name"
+            className="relative top-1/2 left-[calc(50%-5%)] -translate-y-1/2 -translate-x-1/2 scale-[1.15] object-cover"
+            initial={{ scale: 0.85, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.05 }}
+            transition={{ duration: 3.5, ease: [0.76, 0, 0.24, 1] }}
+          />
+        </div>
         <motion.div variants={heroVariants} initial="hidden" animate="visible">
           <motion.h1 variants={heroTextVariants} className="title">
             Hey, I&apos;m <span className="text-light">Maaz.</span>
