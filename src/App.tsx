@@ -9,7 +9,8 @@ import Hero from "./components/sections/hero"
 
 function App() {
   const { scrollYProgress } = useScroll()
-  const offset = useTransform(scrollYProgress, [0, 1], [0, -1350])
+  const offsetY = useTransform(scrollYProgress, [0, 1], [0, -1350])
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 1], [1, 0.05, 0])
 
   return (
     <main className="flex flex-col justify-center min-h-screen w-screen">
@@ -17,7 +18,8 @@ function App() {
       <motion.div
         className="fixed top-0 -z-20"
         style={{
-          top: offset,
+          top: offsetY,
+          opacity,
         }}
       >
         <Hero />
