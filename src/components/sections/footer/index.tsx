@@ -78,7 +78,7 @@ export default function Footer() {
                   viewport={{ once: true, amount: 0.8 }}
                   src="/images/name.svg"
                   alt="name"
-                  className="absolute top-[calc(50%-1rem)] left-[calc(50%-3rem)] -translate-x-1/2 -translate-y-1/2 object-cover opacity-5 scale-125 lg:scale-50"
+                  className="absolute top-64 lg:top-[calc(50%-1rem)] left-[calc(50%-3rem)] -translate-x-1/2 -translate-y-1/2 object-cover opacity-5 scale-125 lg:scale-50"
                 />
               </AnimatePresence>
             </motion.div>
@@ -160,7 +160,9 @@ export default function Footer() {
               {links.map((link) => (
                 <li className="label">
                   <CursorHover>
-                    <a href={link.href}>{link.label}</a>
+                    <a href={link.href} className="hover:text-white">
+                      {link.label}
+                    </a>
                   </CursorHover>
                 </li>
               ))}
