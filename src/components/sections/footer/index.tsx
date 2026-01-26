@@ -64,7 +64,7 @@ export default function Footer() {
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        className="relative flex flex-col justify-center h-screen w-screen p-[15%] z-0 pointer-events-auto"
+        className="relative flex flex-col justify-center lg:h-screen w-screen p-[7%] z-0 pointer-events-auto my-[12dvh] lg:my-0"
         ref={ref}
       >
         {inView && (

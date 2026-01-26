@@ -45,13 +45,13 @@ export default function Experience() {
 
   return (
     <motion.div
-      className="grid place-items-center w-screen p-[7%] relative overflow-hidden z-10 mt-[25dvh]"
+      className="grid place-items-center w-screen p-[7%] relative z-10 mt-[25dvh]"
       ref={ref}
       id="experience"
     >
       <AnimatePresence mode="wait">
         {inView && (
-          <motion.div className="absolute top-[32%] lg:top-1/2 left-[calc(50%+10%)] -translate-x-1/2 -translate-y-1/2 w-full h-fit -z-10 pointer-events-none">
+          <motion.div className="absolute top-0 lg:top-1/2 left-[calc(50%+10%)] -translate-x-1/2 -translate-y-1/2 w-full h-fit -z-10 pointer-events-none">
             <motion.img
               src="/images/experience.svg"
               alt="experience"
