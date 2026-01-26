@@ -13,7 +13,7 @@ function App() {
   const opacity = useTransform(scrollYProgress, [0, 0.25, 1], [1, 0.05, 0])
 
   return (
-    <main className="flex flex-col justify-center min-h-screen w-screen">
+    <main className="flex flex-col justify-center min-h-[100dvh] w-screen">
       <CustomCursor />
       <motion.div
         className="fixed top-0 -z-20"
