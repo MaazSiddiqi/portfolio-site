@@ -25,6 +25,7 @@ function App() {
         <Hero />
       </motion.div>
       <div className="mt-[100dvh] bg-midnight">
+        <div className="h-[25dvh] w-screen text-midnight">a</div>
         <About />
         <Experience />
         <Footer />

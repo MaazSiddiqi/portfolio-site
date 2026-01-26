@@ -34,7 +34,7 @@ export function About() {
 
   return (
     <div
-      className="relative flex items-center lg:justify-center w-screen min-h-screen bg-transparent overflow-clip p-[7%] z-10"
+      className="relative flex items-center lg:justify-center w-screen bg-transparent overflow-clip p-[7%] z-10"
       ref={ref}
       id="about"
     >
