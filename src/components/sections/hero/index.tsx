@@ -45,8 +45,8 @@ export default function Hero() {
             building systems <br /> for the future.
           </motion.h1>
           <motion.h2 variants={heroTextVariants} className="mt-4">
-            Currently a software engineering intern at{" "}
-            <span className="text-light">Amazon Web Services</span>
+            Incoming Backend Engineer at{" "}
+            <span className="text-light">Ramp</span>
           </motion.h2>
         </motion.div>
       </AnimatePresence>

@@ -3,6 +3,11 @@ import { useRef } from "react"
 
 const EXPERIENCE = [
   {
+    company: "Ramp",
+    title: "Incoming Backend Engineer",
+    date: "AUG 2026",
+  },
+  {
     company: "Amazon Web Services",
     title: "Software Engineering Intern",
     date: "MAY 2025 - AUG 2025",
